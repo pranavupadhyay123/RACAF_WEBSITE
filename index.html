@@ -20,37 +20,15 @@
 
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.css">
 
+     <script src="https://cdn.tailwindcss.com"></script>
 
      <link href="css/styles.css" rel="stylesheet">
 
-     <style>
-          .astonish {
-               visibility: visible;
-          }
-
-          @media (max-width: 768px) {
-               .astonish {
-                    visibility: hidden;
-               }
-
-               .animated {
-                    visibility: visible;
-
-               }
-               .card-container{
-                    flex-direction: column;
-               }
-               .card{
-                    max-width: fit-content;
-               }
-
-          }
-     </style>
 </head>
 
-<body>
+<body class="bg-black/95">
 
-     <nav class="main-nav" id="main-nav">
+     <nav class="main-nav bg-black/70" id="main-nav">
           <div class="content-wrapper-sm">
                <a href="#" class="navbar-brand">RACAF 2K24</a>
                <div id="menu-button">
@@ -59,144 +37,518 @@
                     <div class="bar3"></div>
                </div>
                <ul class="nav-links">
+                    <li><a href="#home"></a>Home</li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#reserve">Reservations</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#sonabyss">Sonabyss</a></li>
                </ul>
           </div>
      </nav>
 
 
-     <header>
-
-          <img class="img-absolute" src="img/image.jpg" alt="City 1">
-          <div class="wrapper astonish animated fadeInDown">
-               <h1><strong>RACAF</strong>2K24</h1>
-               <h2 style="font-weight: 900; font-size:xx-large;">EVENTS</h2>
-          </div>
-     </header>
-
-
-     <div class="card-container">
-          <div class="card">
-               <img src="/img/block.jpg" alt="Block Events" class="card-image">
-               <div class="card-content">
-                   <h3>Block Events</h3>
-                   <p class="short-description">Discover exciting events happening in your block...</p>
-                   <div class="card-details">
-                       <p>Join us for a variety of engaging activities, from social gatherings to sports events. Click or hover for more details and stay updated on everything happening around you!</p>
-                   </div>
-               </div>
-           </div>
-           
-
-           <div class="card">
-               <img src="/img/indi.jpg" alt="Individual Games" class="card-image">
-               <div class="card-content">
-                   <h3>Individual Games</h3>
-                   <p class="short-description">Compete in thrilling solo challenges...</p>
-                   <div class="card-details">
-                       <p>Test your skills in a variety of individual games, where it's all about personal performance. From strategy to speed, find your perfect match. Hover or click for more details!</p>
-                   </div>
-               </div>
-           </div>
-           
-
-           <div class="card">
-               <img src="/img/gamezone.jpg" alt="Games Zone Events" class="card-image">
-               <div class="card-content">
-                   <h3>Games Zone Events</h3>
-                   <p class="short-description">Step into the ultimate gaming experience...</p>
-                   <div class="card-details">
-                       <p>Dive into a world of excitement at the Games Zone! Whether you're a casual player or a serious competitor, enjoy a variety of games that will keep you on the edge of your seat. Hover or click for more information!</p>
-                   </div>
-               </div>
-           </div>
-           
-     </div>
      <style>
-          .card-container {
-               display: flex;
-               gap: 50px;
-               justify-content: center;
-               margin: 50px;
-               margin-top: -150px;
+          .parallax {
+               background-image: url('img/image.jpg');
+               height: full;
+               background-attachment: fixed;
+               background-position: center;
+               background-repeat: no-repeat;
+               background-size: cover;
           }
 
-          .card {
-               display: flex;
-               background-color: #000000c4;
-               border-radius: 10px;
-               box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-               overflow: hidden;
-               width: 500px;
-               transition: width 0.4s ease, box-shadow 0.3s ease;
-               cursor: pointer;
+          .header-content {
+               position: relative;
+               z-index: 1;
+               text-align: center;
+               color: white;
+               padding: 50px 0;
           }
 
-          .card:hover {
-               width: 600px;
-               box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+          .header-content h1,
+          .header-content h2 {
+               margin: 0;
           }
 
-          .card-image {
-               width: 150px;
-               height: auto;
-               object-fit: cover;
+          .header-content h1 {
+               font-size: 3rem;
+               font-weight: bold;
           }
 
-          .card-content {
-               padding: 20px;
-               flex-grow: 1;
-               display: flex;
-               flex-direction: column;
-               justify-content: center;
-          }
-
-          .short-description {
-               margin-bottom: 10px;
-          }
-
-          .card-details {
-               max-height: 0;
-               opacity: 0;
-               overflow: hidden;
-               transition: max-height 0.4s ease, opacity 0.4s ease;
-          }
-
-          .card:hover .card-details {
-               max-height: 150px;
-               opacity: 1;
+          .header-content h2 {
+               font-size: 2rem;
+               font-weight: 900;
           }
      </style>
+     </head>
 
-     <footer>
-          <div class="content-wrapper-sm display-flex-between">
+     <body class="bg-gray-100">
 
-               <small>Your copyright 2017.</small>
+          <!-- Parallax Header Section -->
+          <header class="parallax">
+               <div class="header-content">
+                    <h1><strong>RACAF</strong>2K24</h1>
+                    <h2>EVENTS</h2>
+               </div>
+          </header>
 
+          <div class="max-w-7xl mx-auto p-10">
+               <!-- Tab Navigation (Card-Based) -->
+               <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 bg-black/95 p-2 rounded-lg mb-4">
+                    <div id="tab1"
+                         class="tab-button active flex flex-col items-center p-4 bg-gray-900 shadow-lg rounded-lg cursor-pointer hover:bg-blue-700 hover:text-white">
+                         <img src="/img/block.jpg" alt="Block Events" class="w-16 h-16 rounded-lg mb-2">
+                         <h3 class="font-bold text-center text-white text-2xl">Block Events</h3>
+                         <p class="text-sm text-center text-gray-400">Join us for a variety of engaging activities, from
+                              social gatherings to sports events. Click or hover for more details and stay updated on
+                              everything happening around you!</p>
+                    </div>
+                    <div id="tab2"
+                         class="tab-button flex flex-col items-center p-4 bg-gray-900 shadow-lg rounded-lg cursor-pointer hover:bg-blue-700 hover:text-white">
+                         <img src="/img/indi.jpg" alt="Individual Games" class="w-16 h-16 rounded-lg mb-2">
+                         <h3 class="font-bold text-center text-white text-2xl">Individual Games</h3>
+                         <p class="text-sm text-center text-gray-400">Test your skills in a variety of individual games,
+                              where it's all about personal performance. From strategy to speed, find your perfect
+                              match. Hover or click for more details!</p>
+                    </div>
+                    <div id="tab3"
+                         class="tab-button flex flex-col items-center p-4 bg-gray-900 shadow-lg rounded-lg cursor-pointer hover:bg-blue-700 hover:text-white">
+                         <img src="/img/gamezone.jpg" alt="Games Zone Events" class="w-16 h-16 rounded-lg mb-2">
+                         <h3 class="font-bold text-center text-white text-2xl">Games Zone Events</h3>
+                         <p class="text-sm text-center text-gray-400">Dive into a world of excitement at the Games Zone!
+                              Whether you're a casual player or a serious competitor, enjoy a variety of games that will
+                              keep you on the edge of your seat. Hover or click for more information!</p>
+                    </div>
+               </div>
 
-               <div class="social-links">
-                    <ul>
-                         <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                         <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                         <li><a href="#"><i class="fa fa-snapchat-square" aria-hidden="true"></i></a></li>
-                         <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                    </ul>
+               <!-- Tab Content -->
+               <div id="content1" class="tab-content">
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                         <!-- 6 Cards for Tab 1 -->
+                         <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                              <h3 class="text-white font-bold">Xerox</h3>
+                              <p class="text-gray-400">Club: DANCE CLUB</p>
+                              <button
+                                   class="bg-blue-600 text-white px-4 py-2 mt-4 rounded-lg hover:bg-blue-700">Register</button>
+                         </div>
+                         <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                              <h3 class="text-white font-bold">Megataal</h3>
+                              <p class="text-gray-400">Club: DANCE CLUB</p>
+                              <button
+                                   class="bg-blue-600 text-white px-4 py-2 mt-4 rounded-lg hover:bg-blue-700">Register</button>
+                         </div>
+                         <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                              <h3 class="text-white font-bold">Choir Competition</h3>
+                              <p class="text-gray-400">Club: MUSIC CLUB</p>
+                              <button
+                                   class="bg-blue-600 text-white px-4 py-2 mt-4 rounded-lg hover:bg-blue-700">Register</button>
+                         </div>
+                         <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                              <h3 class="text-white font-bold">Street Play</h3>
+                              <p class="text-gray-400">Club: DRAMA CLUB</p>
+                              <button
+                                   class="bg-blue-600 text-white px-4 py-2 mt-4 rounded-lg hover:bg-blue-700">Register</button>
+                         </div>
+                         <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                              <h3 class="text-white font-bold">Theatrics</h3>
+                              <p class="text-gray-400">Club: DRAMA CLUB</p>
+                              <button
+                                   class="bg-blue-600 text-white px-4 py-2 mt-4 rounded-lg hover:bg-blue-700">Register</button>
+                         </div>
+                         <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                              <h3 class="text-white font-bold">Mime</h3>
+                              <p class="text-gray-400">Club: DRAMA CLUB</p>
+                              <button
+                                   class="bg-blue-600 text-white px-4 py-2 mt-4 rounded-lg hover:bg-blue-700">Register</button>
+                         </div>
+                         <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                              <h3 class="text-white font-bold">Music Video</h3>
+                              <p class="text-gray-400">Club: PHOTOGRAPHY AND VIDEOGRAPHY CLUB</p>
+                              <button
+                                   class="bg-blue-600 text-white px-4 py-2 mt-4 rounded-lg hover:bg-blue-700">Register</button>
+                         </div>
+                         <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                              <h3 class="text-white font-bold">Trailer Parody</h3>
+                              <p class="text-gray-400">Club: PHOTOGRAPHY AND VIDEOGRAPHY CLUB</p>
+                              <button
+                                   class="bg-blue-600 text-white px-4 py-2 mt-4 rounded-lg hover:bg-blue-700">Register</button>
+                         </div>
+                         <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                              <h3 class="text-white font-bold">Advertisement Video</h3>
+                              <p class="text-gray-400">Club: PHOTOGRAPHY AND VIDEOGRAPHY CLUB</p>
+                              <button
+                                   class="bg-blue-600 text-white px-4 py-2 mt-4 rounded-lg hover:bg-blue-700">Register</button>
+                         </div>
+                         <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                              <h3 class="text-white font-bold">Block Promotional Video</h3>
+                              <p class="text-gray-400">Club: PHOTOGRAPHY AND VIDEOGRAPHY CLUB</p>
+                              <button
+                                   class="bg-blue-600 text-white px-4 py-2 mt-4 rounded-lg hover:bg-blue-700">Register</button>
+                         </div>
+                         <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                              <h3 class="text-white font-bold">Quizzthon</h3>
+                              <p class="text-gray-400">Club: LITERACY CLUB</p>
+                              <button
+                                   class="bg-blue-600 text-white px-4 py-2 mt-4 rounded-lg hover:bg-blue-700">Register</button>
+                         </div>
+                         <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                              <h3 class="text-white font-bold">Estate Of Dress</h3>
+                              <p class="text-gray-400">Club: HOBBY CLUB</p>
+                              <button
+                                   class="bg-blue-600 text-white px-4 py-2 mt-4 rounded-lg hover:bg-blue-700">Register</button>
+                         </div>
+                         <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                              <h3 class="text-white font-bold">Wall Painting</h3>
+                              <p class="text-gray-400">Club: HOBBY CLUB</p>
+                              <button
+                                   class="bg-blue-600 text-white px-4 py-2 mt-4 rounded-lg hover:bg-blue-700">Register</button>
+                         </div>
+                         <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                              <h3 class="text-white font-bold">Rangoli Making</h3>
+                              <p class="text-gray-400">Club: HOBBY CLUB</p>
+                              <button
+                                   class="bg-blue-600 text-white px-4 py-2 mt-4 rounded-lg hover:bg-blue-700">Register</button>
+                         </div>
+                         <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                              <h3 class="text-white font-bold">Chalk Painting</h3>
+                              <p class="text-gray-400">Club: HOBBY CLUB</p>
+                              <button
+                                   class="bg-blue-600 text-white px-4 py-2 mt-4 rounded-lg hover:bg-blue-700">Register</button>
+                         </div>
+                    </div>
+               </div>
+
+               <div id="content2" class="tab-content hidden">
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                         <!-- 6 Cards for Tab 2 -->
+                         <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                              <h3 class="text-white font-bold">Valorant</h3>
+                              <p class="text-gray-400">Participants: 5k</p>
+                              <p class="text-gray-400">Prize: ₹300</p>
+                              <button
+                                   class="bg-blue-600 text-white px-4 py-2 mt-4 rounded-lg hover:bg-blue-700">Register</button>
+                         </div>
+                         <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                              <h3 class="text-white font-bold">Battle Grounds Mobile India Classic</h3>
+                              <p class="text-gray-400">Participants: 10k</p>
+                              <p class="text-gray-400">Prize: ₹400</p>
+                              <button
+                                   class="bg-blue-600 text-white px-4 py-2 mt-4 rounded-lg hover:bg-blue-700">Register</button>
+                         </div>
+                         <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                              <h3 class="text-white font-bold">Battle Grounds Mobile India TDM</h3>
+                              <p class="text-gray-400">Participants: 3k</p>
+                              <p class="text-gray-400">Prize: ₹200</p>
+                              <button
+                                   class="bg-blue-600 text-white px-4 py-2 mt-4 rounded-lg hover:bg-blue-700">Register</button>
+                         </div>
+                         <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                              <h3 class="text-white font-bold">Mobile Legends Classic</h3>
+                              <p class="text-gray-400">Participants: 10k</p>
+                              <p class="text-gray-400">Prize: ₹600</p>
+                              <button
+                                   class="bg-blue-600 text-white px-4 py-2 mt-4 rounded-lg hover:bg-blue-700">Register</button>
+                         </div>
+                         <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                              <h3 class="text-white font-bold">Mobile Legends Magic Chess</h3>
+                              <p class="text-gray-400">Participants: 3k</p>
+                              <p class="text-gray-400">Prize: ₹150</p>
+                              <button
+                                   class="bg-blue-600 text-white px-4 py-2 mt-4 rounded-lg hover:bg-blue-700">Register</button>
+                         </div>
+                         <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                              <h3 class="text-white font-bold">Subway Surfer</h3>
+                              <p class="text-gray-400">Participants: 2k</p>
+                              <p class="text-gray-400">Prize: ₹100</p>
+                              <button
+                                   class="bg-blue-600 text-white px-4 py-2 mt-4 rounded-lg hover:bg-blue-700">Register</button>
+                         </div>
+                         <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                              <h3 class="text-white font-bold">Tekken 8</h3>
+                              <p class="text-gray-400">Participants: 5k</p>
+                              <p class="text-gray-400">Prize: ₹150</p>
+                              <button
+                                   class="bg-blue-600 text-white px-4 py-2 mt-4 rounded-lg hover:bg-blue-700">Register</button>
+                         </div>
+                         <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                              <h3 class="text-white font-bold">FIFA 24</h3>
+                              <p class="text-gray-400">Participants: 4k</p>
+                              <p class="text-gray-400">Prize: ₹250</p>
+                              <button
+                                   class="bg-blue-600 text-white px-4 py-2 mt-4 rounded-lg hover:bg-blue-700">Register</button>
+                         </div>
+                         <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                              <h3 class="text-white font-bold">Mortal Kombat</h3>
+                              <p class="text-gray-400">Participants: 3k</p>
+                              <p class="text-gray-400">Prize: ₹150</p>
+                              <button
+                                   class="bg-blue-600 text-white px-4 py-2 mt-4 rounded-lg hover:bg-blue-700">Register</button>
+                         </div>
+                         <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                              <h3 class="text-white font-bold">Free Fire Max</h3>
+                              <p class="text-gray-400">Participants: 3k</p>
+                              <p class="text-gray-400">Prize: ₹100</p>
+                              <button
+                                   class="bg-blue-600 text-white px-4 py-2 mt-4 rounded-lg hover:bg-blue-700">Register</button>
+                         </div>
+                    </div>
+               </div>
+
+               <div id="content3" class="tab-content hidden">
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                         <!-- 6 Cards for Tab 3 -->
+                         <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                              <h3 class="text-white font-bold">Cosplay Event</h3>
+                              <p class="text-gray-400">Participants: 25k</p>
+                              <p class="text-gray-400">Prize: ₹400</p>
+                              <button
+                                   class="bg-blue-600 text-white px-4 py-2 mt-4 rounded-lg hover:bg-blue-700">Register</button>
+                         </div>
+
+                         <!-- Mr & Ms Sonabyss -->
+                         <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                              <h3 class="text-white font-bold">Mr & Ms Sonabyss</h3>
+                              <p class="text-gray-400">Participants: 36k</p>
+                              <p class="text-gray-400">Prize: ₹100-200</p>
+                              <button
+                                   class="bg-blue-600 text-white px-4 py-2 mt-4 rounded-lg hover:bg-blue-700">Register</button>
+                         </div>
+
+                         <!-- Fashion Show Event -->
+                         <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                              <h3 class="text-white font-bold">Fashion Show Event</h3>
+                              <p class="text-gray-400">Participants: 8k</p>
+                              <button
+                                   class="bg-blue-600 text-white px-4 py-2 mt-4 rounded-lg hover:bg-blue-700">Register</button>
+                         </div>
+
+                         <!-- Beat Blaze -->
+                         <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                              <h3 class="text-white font-bold">Beat Blaze</h3>
+                              <p class="text-gray-400">Participants: 10k</p>
+                              <button
+                                   class="bg-blue-600 text-white px-4 py-2 mt-4 rounded-lg hover:bg-blue-700">Register</button>
+                         </div>
+
+                         <!-- Sonabyss Idol -->
+                         <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                              <h3 class="text-white font-bold">Sonabyss Idol</h3>
+                              <p class="text-gray-400">Participants: 14k</p>
+                              <p class="text-gray-400">Prize: ₹100</p>
+                              <button
+                                   class="bg-blue-600 text-white px-4 py-2 mt-4 rounded-lg hover:bg-blue-700">Register</button>
+                         </div>
+
+                         <!-- Battle Of Bands -->
+                         <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                              <h3 class="text-white font-bold">Battle Of Bands</h3>
+                              <p class="text-gray-400">Participants: 16k</p>
+                              <p class="text-gray-400">Prize: ₹400</p>
+                              <button
+                                   class="bg-blue-600 text-white px-4 py-2 mt-4 rounded-lg hover:bg-blue-700">Register</button>
+                         </div>
+
+                         <!-- Instrumental Master -->
+                         <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                              <h3 class="text-white font-bold">Instrumental Master</h3>
+                              <p class="text-gray-400">Participants: 5k</p>
+                              <button
+                                   class="bg-blue-600 text-white px-4 py-2 mt-4 rounded-lg hover:bg-blue-700">Register</button>
+                         </div>
+
+                         <!-- Talent Hunt -->
+                         <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                              <h3 class="text-white font-bold">Talent Hunt</h3>
+                              <p class="text-gray-400">Participants: 5k</p>
+                              <p class="text-gray-400">Prize: ₹100</p>
+                              <button
+                                   class="bg-blue-600 text-white px-4 py-2 mt-4 rounded-lg hover:bg-blue-700">Register</button>
+                         </div>
+
+                         <!-- Script It Out -->
+                         <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                              <h3 class="text-white font-bold">Script It Out</h3>
+                              <p class="text-gray-400">Participants: 2.5k</p>
+                              <p class="text-gray-400">Prize: ₹50</p>
+                              <button
+                                   class="bg-blue-600 text-white px-4 py-2 mt-4 rounded-lg hover:bg-blue-700">Register</button>
+                         </div>
+
+                         <!-- Stand Up Comedy -->
+                         <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                              <h3 class="text-white font-bold">Stand Up Comedy</h3>
+                              <p class="text-gray-400">Participants: 4k</p>
+                              <button
+                                   class="bg-blue-600 text-white px-4 py-2 mt-4 rounded-lg hover:bg-blue-700">Register</button>
+                         </div>
+
+                         <!-- Creative Photography -->
+                         <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                              <h3 class="text-white font-bold">Creative Photography</h3>
+                              <p class="text-gray-400">Participants: 2.5k</p>
+                              <p class="text-gray-400">Prize: ₹50</p>
+                              <button
+                                   class="bg-blue-600 text-white px-4 py-2 mt-4 rounded-lg hover:bg-blue-700">Register</button>
+                         </div>
+
+                         <!-- Open Highlight / Racaf Montage -->
+                         <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                              <h3 class="text-white font-bold">Open Highlight / Racaf Montage</h3>
+                              <p class="text-gray-400">Participants: 3k</p>
+                              <button
+                                   class="bg-blue-600 text-white px-4 py-2 mt-4 rounded-lg hover:bg-blue-700">Register</button>
+                         </div>
+
+                         <!-- Extempore -->
+                         <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                              <h3 class="text-white font-bold">Extempore</h3>
+                              <p class="text-gray-400">Participants: 5k</p>
+                              <p class="text-gray-400">Prize: ₹50</p>
+                              <button
+                                   class="bg-blue-600 text-white px-4 py-2 mt-4 rounded-lg hover:bg-blue-700">Register</button>
+                         </div>
+
+                         <!-- Themed Speech -->
+                         <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                              <h3 class="text-white font-bold">Themed Speech</h3>
+                              <p class="text-gray-400">Participants: 5k</p>
+                              <p class="text-gray-400">Prize: ₹50</p>
+                              <button
+                                   class="bg-blue-600 text-white px-4 py-2 mt-4 rounded-lg hover:bg-blue-700">Register</button>
+                         </div>
+
+                         <!-- Open Mic -->
+                         <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                              <h3 class="text-white font-bold">Open Mic</h3>
+                              <p class="text-gray-400">Participants: 6k</p>
+                              <p class="text-gray-400">Prize: ₹50</p>
+                              <button
+                                   class="bg-blue-600 text-white px-4 py-2 mt-4 rounded-lg hover:bg-blue-700">Register</button>
+                         </div>
+
+                         <!-- Sasta Critic -->
+                         <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                              <h3 class="text-white font-bold">Sasta Critic</h3>
+                              <p class="text-gray-400">Participants: 3.5k</p>
+                              <p class="text-gray-400">Prize: ₹50</p>
+                              <button
+                                   class="bg-blue-600 text-white px-4 py-2 mt-4 rounded-lg hover:bg-blue-700">Register</button>
+                         </div>
+
+                         <!-- Glass Painting -->
+                         <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                              <h3 class="text-white font-bold">Glass Painting</h3>
+                              <p class="text-gray-400">Participants: 4.5k</p>
+                              <p class="text-gray-400">Prize: ₹100</p>
+                              <button
+                                   class="bg-blue-600 text-white px-4 py-2 mt-4 rounded-lg hover:bg-blue-700">Register</button>
+                         </div>
+
+                         <!-- T-shirt Painting -->
+                         <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                              <h3 class="text-white font-bold">T-shirt Painting</h3>
+                              <p class="text-gray-400">Participants: 4.5k</p>
+                              <p class="text-gray-400">Prize: ₹100</p>
+                              <button
+                                   class="bg-blue-600 text-white px-4 py-2 mt-4 rounded-lg hover:bg-blue-700">Register</button>
+                         </div>
+
+                         <!-- Mehendi Art -->
+                         <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                              <h3 class="text-white font-bold">Mehendi Art</h3>
+                              <p class="text-gray-400">Participants: 2k</p>
+                              <p class="text-gray-400">Prize: ₹50</p>
+                              <button
+                                   class="bg-blue-600 text-white px-4 py-2 mt-4 rounded-lg hover:bg-blue-700">Register</button>
+                         </div>
+
+                         <!-- Wealth From Waste -->
+                         <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                              <h3 class="text-white font-bold">Wealth From Waste</h3>
+                              <p class="text-gray-400">Participants: 2k</p>
+                              <button
+                                   class="bg-blue-600 text-white px-4 py-2 mt-4 rounded-lg hover:bg-blue-700">Register</button>
+                         </div>
+
+                         <!-- Face Painting -->
+                         <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                              <h3 class="text-white font-bold">Face Painting</h3>
+                              <p class="text-gray-400">Participants: 3k</p>
+                              <p class="text-gray-400">Prize: ₹100</p>
+                              <button
+                                   class="bg-blue-600 text-white px-4 py-2 mt-4 rounded-lg hover:bg-blue-700">Register</button>
+                         </div>
+
+                         <!-- Magazine Craft -->
+                         <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                              <h3 class="text-white font-bold">Magazine Craft</h3>
+                              <p class="text-gray-400">Participants: 2.5k</p>
+                              <p class="text-gray-400">Prize: ₹50</p>
+                              <button
+                                   class="bg-blue-600 text-white px-4 py-2 mt-4 rounded-lg hover:bg-blue-700">Register</button>
+                         </div>
+
+                         <!-- Eye Makeup -->
+                         <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                              <h3 class="text-white font-bold">Eye Makeup</h3>
+                              <p class="text-gray-400">Participants: 1.5k</p>
+                              <button
+                                   class="bg-blue-600 text-white px-4 py-2 mt-4 rounded-lg hover:bg-blue-700">Register</button>
+                         </div>
+
+                         <!-- Colour The Character -->
+                         <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                              <h3 class="text-white font-bold">Colour The Character</h3>
+                              <p class="text-gray-400">Participants: 4.5k</p>
+                              <p class="text-gray-400">Prize: ₹50</p>
+                              <button
+                                   class="bg-blue-600 text-white px-4 py-2 mt-4 rounded-lg hover:bg-blue-700">Register</button>
+                         </div>
+                    </div>
                </div>
           </div>
-     </footer>
 
 
-     <script src="https://code.jquery.com/jquery-3.2.1.min.js"
-          integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-     <script src="js/menu.js" charset="utf-8"></script>
+          <script>
+               const tabs = document.querySelectorAll('.tab-button');
+               const contents = document.querySelectorAll('.tab-content');
+
+               tabs.forEach((tab, index) => {
+                    tab.addEventListener('click', () => {
+                         tabs.forEach(btn => btn.classList.remove('bg-blue-500', 'text-white'));
+                         tab.classList.add('bg-blue-500', 'text-white');
+
+                         contents.forEach(content => content.classList.add('hidden'));
+                         document.getElementById(`content${index + 1}`).classList.remove('hidden');
+                    });
+               });
+          </script>
+
+          <footer>
+               <div class="content-wrapper-sm display-flex-between">
+
+                    <small> RACAF-2K24 copyright 2024.</small>
+
+
+                    <div class="social-links">
+                         <ul>
+                              <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                              <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                              <li><a href="#"><i class="fa fa-snapchat-square" aria-hidden="true"></i></a></li>
+                              <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                         </ul>
+                    </div>
+               </div>
+          </footer>
+
+
+          <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+               integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+          <script src="js/menu.js" charset="utf-8"></script>
 
 
 
-     <script src="js/astonish.js" charset="utf-8"></script>
-     <script src="js/nav.js" charset="utf-8"></script>
-     <script src="js/scroll.js" charset="utf-8"></script>
-</body>
+          <script src="js/astonish.js" charset="utf-8"></script>
+          <script src="js/nav.js" charset="utf-8"></script>
+          <script src="js/scroll.js" charset="utf-8"></script>
+     </body>
 
 </html>
