@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scores</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-image: url('https://images.unsplash.com/photo-1605792657660-596af900c104?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            /* Background image */
+            background-size: cover;
+            background-position: center;
+            filter: brightness(0.8);
+            /* Darken the background a bit */
+        }
+    </style>
+</head>
+
+<body class="bg-cover bg-no-repeat font-sans">
+
+    <div class="container mx-auto mt-10 p-4">
+        <h2 class="text-center text-3xl font-bold text-white mb-10">Scores</h2>
+
+        <div class="overflow-x-auto bg-opacity-50 rounded-lg p-6">
+            <table class="table-auto w-full text-center bg-gray-800 text-white rounded-lg">
+                <thead class="bg-gray-700">
+                    <tr>
+                        <th class="px-4 py-2">Block</th>
+                        <th class="px-4 py-2">Score</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+                    <tr id="blockA">
+                        <td class="border px-4 py-2">Block A</td>
+                        <td class="border px-4 py-2" id="scoreA">0</td>
+                    </tr>
+                    <tr id="blockB">
+                        <td class="border px-4 py-2">Block B</td>
+                        <td class="border px-4 py-2" id="scoreB">0</td>
+                    </tr>
+                    <tr id="blockC">
+                        <td class="border px-4 py-2">Block C</td>
+                        <td class="border px-4 py-2" id="scoreC">0</td>
+                    </tr>
+                    <tr id="blockD">
+                        <td class="border px-4 py-2">Block D</td>
+                        <td class="border px-4 py-2" id="scoreD">0</td>
+                    </tr>
+                    <tr id="blockE1">
+                        <td class="border px-4 py-2">Block E1</td>
+                        <td class="border px-4 py-2" id="scoreE1">0</td>
+                    </tr>
+                    <tr id="blockE2">
+                        <td class="border px-4 py-2">Block E2</td>
+                        <td class="border px-4 py-2" id="scoreE2">0</td>
+                    </tr>
+                    <tr id="blockF1">
+                        <td class="border px-4 py-2">Block F1</td>
+                        <td class="border px-4 py-2" id="scoreF1">0</td>
+                    </tr>
+                    <tr id="blockF2">
+                        <td class="border px-4 py-2">Block F2</td>
+                        <td class="border px-4 py-2" id="scoreF2">0</td>
+                    </tr>
+                    <tr id="blockH1">
+                        <td class="border px-4 py-2">Block H1</td>
+                        <td class="border px-4 py-2" id="scoreH1">0</td>
+                    </tr>
+                    <tr id="blockH2">
+                        <td class="border px-4 py-2">Block H2</td>
+                        <td class="border px-4 py-2" id="scoreH2">0</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Input field and button to add daily scores -->
+        <div class="mt-8 text-center">
+            <input type="text" id="blockName" class="px-4 py-2 border rounded" placeholder="Block Name">
+            <input type="number" id="dailyScore" class="px-4 py-2 border rounded" placeholder="Score" min="0">
+            <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+                onclick="authenticateAndAddScore()">Add Score</button>
+        </div>
+    </div>
+
+    <!-- JavaScript to handle score update with password authentication -->
+    <script>
+        const correctPassword = 'admin123'; // Use environment variables or server-side storage in real applications
+
+        function authenticateAndAddScore() {
+            const password = prompt('Enter password to update the score:');
+            if (password === correctPassword) {
+                addDailyScore();
+            } else {
+                alert('Incorrect password!');
+            }
+        }
+
+        function addDailyScore() {
+            const blockName = document.getElementById('blockName').value.trim().toLowerCase(); // Convert input to lowercase
+            const dailyScore = parseInt(document.getElementById('dailyScore').value);
+
+            if (!blockName || isNaN(dailyScore)) {
+                alert('Please provide a valid block name and score.');
+                return;
+            }
+
+            // Find the row based on the block name
+            const rows = document.querySelectorAll('#table-body tr');
+            let found = false;
+
+            rows.forEach(row => {
+                const rowBlockName = row.querySelector('td:first-child').textContent.trim().toLowerCase();
+
+                if (rowBlockName === blockName) {
+                    const scoreCell = row.querySelector('td:last-child');
+                    let currentScore = parseInt(scoreCell.textContent);
+                    currentScore += dailyScore;
+                    scoreCell.textContent = currentScore;
+                    found = true;
+                }
+            });
+
+            if (!found) {
+                alert('Block not found!');
+            }
+
+            // Clear inputs
+            document.getElementById('blockName').value = '';
+            document.getElementById('dailyScore').value = '';
+        }
+    </script>
+</body>
+
+</html>
