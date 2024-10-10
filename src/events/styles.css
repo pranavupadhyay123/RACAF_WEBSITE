@@ -1057,7 +1057,7 @@ footer .social-links ul li a {
   overflow: hidden;
 }
 
-/* Background Video */
+
 #bg-video {
   position: absolute;
   top: 50%;
@@ -1069,20 +1069,20 @@ footer .social-links ul li a {
   object-fit: cover;
 }
 
-/* Header Content Styling */
+
 .header-content {
-  position: absolute; /* Make it overlap the video */
-  top: 50%; /* Center vertically */
-  left: 50%; /* Center horizontally */
-  transform: translate(-50%, -50%); /* Center using transform */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
   color: #FFD700;
-  z-index: 1; /* Place it on top of the video */
-  font-family:LegendaryRunes;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add text shadow for better visibility */
+  z-index: 1;
+  font-family: LegendaryRunes;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* Additional styling for header */
+
 .header-content h1 {
   font-size: 60px;
   margin: 0;
