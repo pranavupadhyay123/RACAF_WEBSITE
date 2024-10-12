@@ -66,7 +66,7 @@
         </div>
     </div>
     <div class="max-w-7xl mx-auto p-10">
-        <!-- Tab Navigation (Card-Based) -->
+
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 bg-black/95 p-2 rounded-lg mb-4">
             <div class="tab-button active flex flex-col items-center p-4 bg-black/30 shadow-lg rounded-lg cursor-pointer hover:bg-grey-900 hover:text-white"
                 id="tab1"> <img alt="Block Events" class="w-16 h-16 rounded-lg mb-2" src="/img/block.jpg">
@@ -89,30 +89,124 @@
                     you're a casual player or a serious competitor, enjoy a variety of games that will keep you on the
                     edge of your seat. Hover or click for more information! </p>
             </div>
-        </div> <!-- Tab Content -->
+        </div>
         <div class="tab-content" id="content1">
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+
+                <div class="bg-gray-800 p-4 rounded-lg shadow-lg mb-4">
                     <h3 class="text-white font-bold">Xerox</h3>
-                    <p class="text-gray-400">Club: DANCE CLUB</p> <a
-                        class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-4 rounded-lg hover:bg-orange-600 m-1">Register</a>
+                    <p class="text-gray-400">Club: DANCE CLUB</p>
                     <a
-                        class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-2 rounded-lg hover:bg-orange-600 m-1">Rules</a>
+                        class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-4 rounded-lg hover:bg-orange-600 m-1">Register</a>
+                    <a data-modal="rulesModalXerox"
+                        class="rules-button cursor-pointer bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-2 rounded-lg hover:bg-orange-600 m-1">Rules</a>
                 </div>
-                <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+
+
+                <div id="rulesModalXerox"
+                    class="rules-modal fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden">
+                    <div class="bg-white p-6 rounded-lg shadow-lg w-3/4 lg:w-1/2">
+                        <h3 class="text-xl font-bold mb-4">XEROX: Rules</h3>
+                        <ul class="list-disc list-inside text-sm text-gray-700">
+                            <li><strong>Participants:</strong> According to the chosen song (Girls and Boys)</li>
+                            <li><strong>Time Limit:</strong> 4 to 8 minutes</li>
+                            <li><strong>Points:</strong></li>
+                            <ul class="ml-5 list-disc">
+                                <li>1st place: 130 points</li>
+                                <li>2nd place: 100 points</li>
+                                <li>3rd place: 80 points</li>
+                                <li>Negative points: -60 points</li>
+                            </ul>
+                            <li><strong>Marking Scheme:</strong></li>
+                            <ul class="ml-5 list-disc">
+                                <li>Costume: 30 points</li>
+                                <li>Sync: 25 points</li>
+                                <li>Expression: 20 points</li>
+                                <li>Presentation: 20 points</li>
+                                <li>Performance: 20 points</li>
+                                <li>Accuracy: 15 points</li>
+                            </ul>
+                            <li><strong>Total:</strong> 130 points</li>
+                            <li><strong>Note:</strong> Any block failing to participate will get negative marks.</li>
+                            <li>Song should be provided at the earliest for convenience, and same songs are not allowed.
+                            </li>
+                            <li>Songs will be chosen on a first-come, first-served basis.</li>
+                        </ul>
+                        <button
+                            class="close-modal mt-6 bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600">Close</button>
+                    </div>
+                </div>
+
+                <div class="bg-gray-800 p-4 rounded-lg shadow-lg mb-4">
                     <h3 class="text-white font-bold">Megataal</h3>
-                    <p class="text-gray-400">Club: DANCE CLUB</p> <a
-                        class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-4 rounded-lg hover:bg-orange-600 m-1">Register</a>
+                    <p class="text-gray-400">Club: DANCE CLUB</p>
                     <a
-                        class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-2 rounded-lg hover:bg-orange-600 m-1">Rules</a>
+                        class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-4 rounded-lg hover:bg-orange-600 m-1">Register</a>
+                    <a data-modal="rulesModalMegataal"
+                        class="rules-button cursor-pointer bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-2 rounded-lg hover:bg-orange-600 m-1">Rules</a>
                 </div>
-                <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+
+
+                <div id="rulesModalMegataal"
+                    class="rules-modal fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden">
+                    <div class="bg-white p-6 rounded-lg shadow-lg w-3/4 lg:w-1/2">
+                        <h3 class="text-xl font-bold mb-4">MEGATAAL: Block Event Rules</h3>
+                        <ul class="list-disc list-inside text-sm text-gray-700">
+                            <li><strong>TOTAL NUMBER OF MEMBERS:</strong> Minimum 7 girls and 10 boys</li>
+                            <li><strong>TIME LIMIT:</strong> 6 to 7 minutes</li>
+                            <li><strong>POINTS:</strong></li>
+                            <ul class="ml-4">
+                                <li>1st - 150 points</li>
+                                <li>2nd - 120 points</li>
+                                <li>3rd - 90 points</li>
+                                <li>Negative Points - 70 points</li>
+                            </ul>
+                            <li><strong>MARKING SCHEME:</strong></li>
+                            <ul class="ml-4">
+                                <li>Technique - 30 points</li>
+                                <li>Choreography - 40 points</li>
+                                <li>Presentation - 25 points</li>
+                                <li>Stage Covering - 20 points</li>
+                                <li>Costume - 15 points</li>
+                                <li>Performance - 20 points</li>
+                            </ul>
+                            <li><strong>TOTAL:</strong> 150 points</li>
+                            <li>Any block fails to participate will get negative points.</li>
+                        </ul>
+                        <button
+                            class="close-modal mt-6 bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600">Close</button>
+                    </div>
+                </div>
+
+
+                <div class="bg-gray-800 p-4 rounded-lg shadow-lg mb-4">
                     <h3 class="text-white font-bold">Choir Competition</h3>
-                    <p class="text-gray-400">Club: MUSIC CLUB</p> <a
-                        class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-4 rounded-lg hover:bg-orange-600 m-1">Register</a>
+                    <p class="text-gray-400">Club: MUSIC CLUB</p>
                     <a
-                        class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-2 rounded-lg hover:bg-orange-600 m-1">Rules</a>
+                        class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-4 rounded-lg hover:bg-orange-600 m-1">Register</a>
+                    <a data-modal="rulesModalChoir"
+                        class="rules-button cursor-pointer bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-2 rounded-lg hover:bg-orange-600 m-1">Rules</a>
                 </div>
+
+
+                <div id="rulesModalChoir"
+                    class="rules-modal fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden">
+                    <div class="bg-white p-6 rounded-lg shadow-lg w-3/4 lg:w-1/2">
+                        <h3 class="text-xl font-bold mb-4">CHOIR COMPETITION: Rules</h3>
+                        <ul class="list-disc list-inside text-sm text-gray-700">
+                            <li><strong>Total number of members:</strong> 17 (12 boys and 5 girls, including musicians)
+                            </li>
+                            <li><strong>Language:</strong> Only English and Hindi songs allowed</li>
+                            <li><strong>Time Limit:</strong> Minimum 10 minutes, Maximum 12 minutes</li>
+                            <li>Negative marking for not following the time limit</li>
+                            <li>Extra marks for dress code</li>
+                            <li>Any block failing to participate will get negative points</li>
+                        </ul>
+                        <button
+                            class="close-modal mt-6 bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600">Close</button>
+                    </div>
+                </div>
+
                 <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
                     <h3 class="text-white font-bold">Street Play</h3>
                     <p class="text-gray-400">Club: DRAMA CLUB</p>
@@ -135,34 +229,143 @@
                     <a
                         class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-2 rounded-lg hover:bg-orange-600 m-1">Rules</a>
                 </div>
-                <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
-                    <h3 class="text-white font-bold">Music Video</h3>
-                    <p class="text-gray-400">Club: PHOTOGRAPHY AND VIDEOGRAPHY CLUB</p> <a
-                        class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-4 rounded-lg hover:bg-orange-600 m-1">Register</a>
-                    <a
-                        class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-2 rounded-lg hover:bg-orange-600 m-1">Rules</a>
-                </div>
-                <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
-                    <h3 class="text-white font-bold">Trailer Parody</h3>
-                    <p class="text-gray-400">Club: PHOTOGRAPHY AND VIDEOGRAPHY CLUB</p> <a
-                        class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-4 rounded-lg hover:bg-orange-600 m-1">Register</a>
-                    <a
-                        class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-2 rounded-lg hover:bg-orange-600 m-1">Rules</a>
-                </div>
-                <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
-                    <h3 class="text-white font-bold">Advertisement Video</h3>
-                    <p class="text-gray-400">Club: PHOTOGRAPHY AND VIDEOGRAPHY CLUB</p> <a
-                        class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-4 rounded-lg hover:bg-orange-600 m-1">Register</a>
-                    <a
-                        class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-2 rounded-lg hover:bg-orange-600 m-1">Rules</a>
-                </div>
-                <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
-                    <h3 class="text-white font-bold">Block Promotional Video</h3>
-                    <p class="text-gray-400">Club: PHOTOGRAPHY AND VIDEOGRAPHY CLUB</p> <a
-                        class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-4 rounded-lg hover:bg-orange-600 m-1">Register</a>
-                    <a
-                        class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-2 rounded-lg hover:bg-orange-600 m-1">Rules</a>
-                </div>
+<!-- Event: Music Video -->
+<div class="bg-gray-800 p-4 rounded-lg shadow-lg mb-4">
+    <h3 class="text-white font-bold">Music Video</h3>
+    <p class="text-gray-400">Club: PHOTOGRAPHY AND VIDEOGRAPHY CLUB</p>
+    <a class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-4 rounded-lg hover:bg-orange-600 m-1">Register</a>
+    <a data-modal="rulesModalMusicVideo"
+        class="rules-button cursor-pointer bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-2 rounded-lg hover:bg-orange-600 m-1">Rules</a>
+</div>
+
+<!-- Modal for Music Video -->
+<div id="rulesModalMusicVideo" class="rules-modal fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden">
+    <div class="bg-white p-6 rounded-lg shadow-lg w-3/4 lg:w-1/2">
+        <h3 class="text-xl font-bold mb-4">MUSIC VIDEO: Rules</h3>
+        <ul class="list-disc list-inside text-sm text-gray-700">
+            <li><strong>Points:</strong></li>
+            <ul class="ml-5 list-disc">
+                <li>1st: 70 points</li>
+                <li>2nd: 50 points</li>
+                <li>3rd: 30 points</li>
+            </ul>
+            <li><strong>Rules:</strong></li>
+            <ul class="ml-5 list-disc">
+                <li>Video should not exceed 4 minutes.</li>
+                <li>Minimum 4 members, maximum 10 members per group.</li>
+                <li>No explicit content allowed.</li>
+                <li>Songs in any language are allowed.</li>
+                <li>One video is required from each block.</li>
+            </ul>
+            <li><strong>Negative Points:</strong> -50 points for violations</li>
+        </ul>
+        <button class="close-modal mt-6 bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600">Close</button>
+    </div>
+</div>
+
+<!-- Event: Trailer Parody -->
+<div class="bg-gray-800 p-4 rounded-lg shadow-lg mb-4">
+    <h3 class="text-white font-bold">Trailer Parody</h3>
+    <p class="text-gray-400">Club: PHOTOGRAPHY AND VIDEOGRAPHY CLUB</p>
+    <a class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-4 rounded-lg hover:bg-orange-600 m-1">Register</a>
+    <a data-modal="rulesModalTrailerParody"
+        class="rules-button cursor-pointer bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-2 rounded-lg hover:bg-orange-600 m-1">Rules</a>
+</div>
+
+<!-- Modal for Trailer Parody -->
+<div id="rulesModalTrailerParody" class="rules-modal fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden">
+    <div class="bg-white p-6 rounded-lg shadow-lg w-3/4 lg:w-1/2">
+        <h3 class="text-xl font-bold mb-4">TRAILER PARODY: Rules</h3>
+        <ul class="list-disc list-inside text-sm text-gray-700">
+            <li><strong>Points:</strong></li>
+            <ul class="ml-5 list-disc">
+                <li>1st: 100 points</li>
+                <li>2nd: 70 points</li>
+                <li>3rd: 50 points</li>
+            </ul>
+            <li><strong>Rules:</strong></li>
+            <ul class="ml-5 list-disc">
+                <li>It should be a parody of an existing trailer.</li>
+                <li>Trailers in any language are allowed.</li>
+                <li>Minimum 4 members, maximum 15 members per group.</li>
+                <li>No explicit content allowed.</li>
+                <li>One video is required from each block.</li>
+            </ul>
+            <li><strong>Negative Points:</strong> -70 points for violations</li>
+        </ul>
+        <button class="close-modal mt-6 bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600">Close</button>
+    </div>
+</div>
+
+<!-- Event: Advertisement Video -->
+<div class="bg-gray-800 p-4 rounded-lg shadow-lg mb-4">
+    <h3 class="text-white font-bold">Advertisement Video</h3>
+    <p class="text-gray-400">Club: PHOTOGRAPHY AND VIDEOGRAPHY CLUB</p>
+    <a class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-4 rounded-lg hover:bg-orange-600 m-1">Register</a>
+    <a data-modal="rulesModalAdvertisementVideo"
+        class="rules-button cursor-pointer bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-2 rounded-lg hover:bg-orange-600 m-1">Rules</a>
+</div>
+
+<!-- Modal for Advertisement Video -->
+<div id="rulesModalAdvertisementVideo" class="rules-modal fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden">
+    <div class="bg-white p-6 rounded-lg shadow-lg w-3/4 lg:w-1/2">
+        <h3 class="text-xl font-bold mb-4">ADVERTISEMENT VIDEO: Rules</h3>
+        <ul class="list-disc list-inside text-sm text-gray-700">
+            <li><strong>Points:</strong></li>
+            <ul class="ml-5 list-disc">
+                <li>1st: 70 points</li>
+                <li>2nd: 50 points</li>
+                <li>3rd: 30 points</li>
+            </ul>
+            <li><strong>Rules:</strong></li>
+            <ul class="ml-5 list-disc">
+                <li>The ad must be original and not a copy of an existing one.</li>
+                <li>The product should be genuine and innovative.</li>
+                <li>Video should not exceed 3 minutes.</li>
+                <li>Minimum 4 members, maximum 8 members per group.</li>
+                <li>No explicit content allowed.</li>
+                <li>One video is required from each block.</li>
+            </ul>
+            <li><strong>Negative Points:</strong> -50 points for violations</li>
+        </ul>
+        <button class="close-modal mt-6 bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600">Close</button>
+    </div>
+</div>
+
+<!-- Event: Block Promotional Video -->
+<div class="bg-gray-800 p-4 rounded-lg shadow-lg mb-4">
+    <h3 class="text-white font-bold">Block Promotional Video</h3>
+    <p class="text-gray-400">Club: PHOTOGRAPHY AND VIDEOGRAPHY CLUB</p>
+    <a class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-4 rounded-lg hover:bg-orange-600 m-1">Register</a>
+    <a data-modal="rulesModalBlockPromoVideo"
+        class="rules-button cursor-pointer bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-2 rounded-lg hover:bg-orange-600 m-1">Rules</a>
+</div>
+
+<!-- Modal for Block Promotional Video -->
+<div id="rulesModalBlockPromoVideo" class="rules-modal fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden">
+    <div class="bg-white p-6 rounded-lg shadow-lg w-3/4 lg:w-1/2">
+        <h3 class="text-xl font-bold mb-4">BLOCK PROMOTIONAL VIDEO: Rules</h3>
+        <ul class="list-disc list-inside text-sm text-gray-700">
+            <li><strong>Points:</strong></li>
+            <ul class="ml-5 list-disc">
+                <li>1st: 90 points</li>
+                <li>2nd: 70 points</li>
+                <li>3rd: 50 points</li>
+            </ul>
+            <li><strong>Rules:</strong></li>
+            <ul class="ml-5 list-disc">
+                <li>The video should promote your block, highlighting its specialties in a fun, parody way.</li>
+                <li>Video length should not exceed 4 minutes.</li>
+                <li>Minimum 5 members, maximum 12 members per block.</li>
+                <li>No explicit content allowed.</li>
+                <li>One video is required from each block.</li>
+            </ul>
+            <li><strong>Negative Points:</strong> -70 points for violations</li>
+        </ul>
+        <button class="close-modal mt-6 bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600">Close</button>
+    </div>
+</div>
+
                 <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
                     <h3 class="text-white font-bold">Quizzthon</h3>
                     <p class="text-gray-400">Club: LITERACY CLUB</p> <a
@@ -202,7 +405,7 @@
         </div>
         <div class="tab-content hidden" id="content2">
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <!-- 6 Cards for Tab 2 -->
+
                 <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
                     <h3 class="text-white font-bold">Valorant</h3>
                     <p class="text-gray-400">Total Prize: 5k</p>
@@ -287,7 +490,7 @@
         </div>
         <div class="tab-content hidden" id="content3">
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <!-- 6 Cards for Tab 3 -->
+
                 <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
                     <h3 class="text-white font-bold">Cosplay Event</h3>
                     <p class="text-gray-400">Total Prize: 25k</p>
@@ -295,7 +498,7 @@
                         class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-4 rounded-lg hover:bg-orange-600 m-1">Register</a>
                     <a
                         class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-2 rounded-lg hover:bg-orange-600 m-1">Rules</a>
-                </div> <!-- Mr & Ms Sonabyss -->
+                </div>
                 <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
                     <h3 class="text-white font-bold">Mr & Ms Sonabyss</h3>
                     <p class="text-gray-400">Total Prize: 36k</p>
@@ -303,178 +506,313 @@
                         class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-4 rounded-lg hover:bg-orange-600 m-1">Register</a>
                     <a
                         class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-2 rounded-lg hover:bg-orange-600 m-1">Rules</a>
-                </div> <!-- Fashion Show Event -->
+                </div>
                 <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
                     <h3 class="text-white font-bold">Fashion Show Event</h3>
                     <p class="text-gray-400">Total Prize: 8k</p> <a
                         class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-4 rounded-lg hover:bg-orange-600 m-1">Register</a>
                     <a
                         class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-2 rounded-lg hover:bg-orange-600 m-1">Rules</a>
-                </div> <!-- Beat Blaze -->
-                <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                </div>
+                <div class="bg-gray-800 p-4 rounded-lg shadow-lg mb-4">
                     <h3 class="text-white font-bold">Beat Blaze</h3>
-                    <p class="text-gray-400">Total Prize: 10k</p> <a
-                        class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-4 rounded-lg hover:bg-orange-600 m-1">Register</a>
+                    <p class="text-gray-400">Total Prize: 10k</p>
                     <a
-                        class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-2 rounded-lg hover:bg-orange-600 m-1">Rules</a>
-                </div> <!-- Sonabyss Idol -->
-                <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                        class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-4 rounded-lg hover:bg-orange-600 m-1">Register</a>
+                    <a data-modal="rulesModalBeatBlaze"
+                        class="rules-button cursor-pointer bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-2 rounded-lg hover:bg-orange-600 m-1">Rules</a>
+                </div>
+
+
+                <div id="rulesModalBeatBlaze"
+                    class="rules-modal fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden">
+                    <div class="bg-white p-6 rounded-lg shadow-lg w-3/4 lg:w-1/2">
+                        <h3 class="text-xl font-bold mb-4">BEAT BLAZE: Rules</h3>
+                        <ul class="list-disc list-inside text-sm text-gray-700">
+                            <li><strong>Entry Fee:</strong> ₹100/- per participant</li>
+                            <li>Performance can be <strong>Solo, Duet, or Group</strong> (max 6 members)</li>
+                            <li>There will be <strong>two rounds:</strong> Audition Round and Final Round</li>
+                            <li><strong>Time Limit:</strong> 4 to 6 minutes</li>
+                            <li>Finalists must submit their audio beforehand to the Dance Club in-charge:</li>
+                            <ul class="ml-5 list-disc">
+                                <li><strong>Dance Club In-Charge:</strong> 9101696279 / 9863062032</li>
+                            </ul>
+                            <li>For any enquiries, contact the above numbers.</li>
+                        </ul>
+                        <button
+                            class="close-modal mt-6 bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600">Close</button>
+                    </div>
+                </div>
+
+
+                <div class="bg-gray-800 p-4 rounded-lg shadow-lg mb-4">
                     <h3 class="text-white font-bold">Sonabyss Idol</h3>
                     <p class="text-gray-400">Total Prize: 14k</p>
-                    <p class="text-gray-400">Entry Fee: ₹100</p> <a
-                        class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-4 rounded-lg hover:bg-orange-600 m-1">Register</a>
+                    <p class="text-gray-400">Entry Fee: ₹100</p>
                     <a
-                        class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-2 rounded-lg hover:bg-orange-600 m-1">Rules</a>
-                </div> <!-- Battle Of Bands -->
-                <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                        class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-4 rounded-lg hover:bg-orange-600 m-1">Register</a>
+                    <a data-modal="rulesModalSonabyss"
+                        class="rules-button cursor-pointer bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-2 rounded-lg hover:bg-orange-600 m-1">Rules</a>
+                </div>
+
+
+                <div id="rulesModalSonabyss"
+                    class="rules-modal fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden">
+                    <div class="bg-white p-6 rounded-lg shadow-lg w-3/4 lg:w-1/2">
+                        <h3 class="text-xl font-bold mb-4">SONABYSS IDOL: Rules</h3>
+                        <ul class="list-disc list-inside text-sm text-gray-700">
+                            <li><strong>Entry Fee:</strong> Rs 100/- per participant</li>
+                            <li>Participants can register for either Hindi Genre or English Genre (only one)</li>
+                            <li><strong>Rounds:</strong> Audition round and Final round</li>
+                            <li><strong>Audition:</strong> Participants must sing with raw voices using a single
+                                instrument (self-played or musicians provided)</li>
+                            <li><strong>Final Round:</strong> Participants may use Karaoke tracks</li>
+                            <li><strong>Time Limit:</strong> 5 minutes each</li>
+                        </ul>
+                        <button
+                            class="close-modal mt-6 bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600">Close</button>
+                    </div>
+                </div>
+
+                < <div class="bg-gray-800 p-4 rounded-lg shadow-lg mb-4">
                     <h3 class="text-white font-bold">Battle Of Bands</h3>
                     <p class="text-gray-400">Total Prize: 16k</p>
-                    <p class="text-gray-400">Entry Fee: ₹400</p> <a
-                        class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-4 rounded-lg hover:bg-orange-600 m-1">Register</a>
+                    <p class="text-gray-400">Entry Fee: ₹400</p>
                     <a
-                        class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-2 rounded-lg hover:bg-orange-600 m-1">Rules</a>
-                </div> <!-- Instrumental Master -->
-                <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
-                    <h3 class="text-white font-bold">Instrumental Master</h3>
-                    <p class="text-gray-400">Total Prize: 5k</p> <a
                         class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-4 rounded-lg hover:bg-orange-600 m-1">Register</a>
-                    <a
-                        class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-2 rounded-lg hover:bg-orange-600 m-1">Rules</a>
-                </div> <!-- Talent Hunt -->
-                <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
-                    <h3 class="text-white font-bold">Talent Hunt</h3>
-                    <p class="text-gray-400">Total Prize: 5k</p>
-                    <p class="text-gray-400">Entry Fee: ₹100</p> <a
-                        class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-4 rounded-lg hover:bg-orange-600 m-1">Register</a>
-                    <a
-                        class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-2 rounded-lg hover:bg-orange-600 m-1">Rules</a>
-                </div> <!-- Script It Out -->
-                <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
-                    <h3 class="text-white font-bold">Script It Out</h3>
-                    <p class="text-gray-400">Total Prize: 2.5k</p>
-                    <p class="text-gray-400">Entry Fee: ₹50</p> <a
-                        class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-4 rounded-lg hover:bg-orange-600 m-1">Register</a>
-                    <a
-                        class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-2 rounded-lg hover:bg-orange-600 m-1">Rules</a>
-                </div> <!-- Stand Up Comedy -->
-                <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
-                    <h3 class="text-white font-bold">Stand Up Comedy</h3>
-                    <p class="text-gray-400">Total Prize: 4k</p> <a
-                        class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-4 rounded-lg hover:bg-orange-600 m-1">Register</a>
-                    <a
-                        class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-2 rounded-lg hover:bg-orange-600 m-1">Rules</a>
-                </div> <!-- Creative Photography -->
-                <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
-                    <h3 class="text-white font-bold">Creative Photography</h3>
-                    <p class="text-gray-400">Total Prize: 2.5k</p>
-                    <p class="text-gray-400">Entry Fee: ₹50</p> <a
-                        class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-4 rounded-lg hover:bg-orange-600 m-1">Register</a>
-                    <a
-                        class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-2 rounded-lg hover:bg-orange-600 m-1">Rules</a>
-                </div> <!-- Open Highlight / Racaf Montage -->
-                <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
-                    <h3 class="text-white font-bold">Open Highlight / Racaf Montage</h3>
-                    <p class="text-gray-400">Total Prize: 3k</p> <a
-                        class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-4 rounded-lg hover:bg-orange-600 m-1">Register</a>
-                    <a
-                        class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-2 rounded-lg hover:bg-orange-600 m-1">Rules</a>
-                </div> <!-- Extempore -->
-                <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
-                    <h3 class="text-white font-bold">Extempore</h3>
-                    <p class="text-gray-400">Total Prize: 5k</p>
-                    <p class="text-gray-400">Entry Fee: ₹50</p> <a
-                        class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-4 rounded-lg hover:bg-orange-600 m-1">Register</a>
-                    <a
-                        class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-2 rounded-lg hover:bg-orange-600 m-1">Rules</a>
-                </div> <!-- Themed Speech -->
-                <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
-                    <h3 class="text-white font-bold">Themed Speech</h3>
-                    <p class="text-gray-400">Total Prize: 5k</p>
-                    <p class="text-gray-400">Entry Fee: ₹50</p> <a
-                        class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-4 rounded-lg hover:bg-orange-600 m-1">Register</a>
-                    <a
-                        class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-2 rounded-lg hover:bg-orange-600 m-1">Rules</a>
-                </div> <!-- Open Mic -->
-                <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
-                    <h3 class="text-white font-bold">Open Mic</h3>
-                    <p class="text-gray-400">Total Prize: 6k</p>
-                    <p class="text-gray-400">Entry Fee: ₹50</p> <a
-                        class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-4 rounded-lg hover:bg-orange-600 m-1">Register</a>
-                    <a
-                        class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-2 rounded-lg hover:bg-orange-600 m-1">Rules</a>
-                </div> <!-- Sasta Critic -->
-                <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
-                    <h3 class="text-white font-bold">Sasta Critic</h3>
-                    <p class="text-gray-400">Total Prize: 3.5k</p>
-                    <p class="text-gray-400">Entry Fee: ₹50</p> <a
-                        class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-4 rounded-lg hover:bg-orange-600 m-1">Register</a>
-                    <a
-                        class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-2 rounded-lg hover:bg-orange-600 m-1">Rules</a>
-                </div> <!-- Glass Painting -->
-                <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
-                    <h3 class="text-white font-bold">Glass Painting</h3>
-                    <p class="text-gray-400">Total Prize: 4.5k</p>
-                    <p class="text-gray-400">Entry Fee: ₹100</p> <a
-                        class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-4 rounded-lg hover:bg-orange-600 m-1">Register</a>
-                    <a
-                        class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-2 rounded-lg hover:bg-orange-600 m-1">Rules</a>
-                </div> <!-- T-shirt Painting -->
-                <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
-                    <h3 class="text-white font-bold">T-shirt Painting</h3>
-                    <p class="text-gray-400">Total Prize: 4.5k</p>
-                    <p class="text-gray-400">Entry Fee: ₹100</p> <a
-                        class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-4 rounded-lg hover:bg-orange-600 m-1">Register</a>
-                    <a
-                        class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-2 rounded-lg hover:bg-orange-600 m-1">Rules</a>
-                </div> <!-- Mehendi Art -->
-                <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
-                    <h3 class="text-white font-bold">Mehendi Art</h3>
-                    <p class="text-gray-400">Total Prize: 2k</p>
-                    <p class="text-gray-400">Entry Fee: ₹50</p> <a
-                        class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-4 rounded-lg hover:bg-orange-600 m-1">Register</a>
-                    <a
-                        class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-2 rounded-lg hover:bg-orange-600 m-1">Rules</a>
-                </div> <!-- Wealth From Waste -->
-                <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
-                    <h3 class="text-white font-bold">Wealth From Waste</h3>
-                    <p class="text-gray-400">Total Prize: 2k</p> <a
-                        class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-4 rounded-lg hover:bg-orange-600 m-1">Register</a>
-                    <a
-                        class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-2 rounded-lg hover:bg-orange-600 m-1">Rules</a>
-                </div> <!-- Face Painting -->
-                <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
-                    <h3 class="text-white font-bold">Face Painting</h3>
-                    <p class="text-gray-400">Total Prize: 3k</p>
-                    <p class="text-gray-400">Entry Fee: ₹100</p> <a
-                        class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-4 rounded-lg hover:bg-orange-600 m-1">Register</a>
-                    <a
-                        class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-2 rounded-lg hover:bg-orange-600 m-1">Rules</a>
-                </div> <!-- Magazine Craft -->
-                <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
-                    <h3 class="text-white font-bold">Magazine Craft</h3>
-                    <p class="text-gray-400">Total Prize: 2.5k</p>
-                    <p class="text-gray-400">Entry Fee: ₹50</p> <a
-                        class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-4 rounded-lg hover:bg-orange-600 m-1">Register</a>
-                    <a
-                        class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-2 rounded-lg hover:bg-orange-600 m-1">Rules</a>
-                </div> <!-- Eye Makeup -->
-                <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
-                    <h3 class="text-white font-bold">Eye Makeup</h3>
-                    <p class="text-gray-400">Total Prize: 1.5k</p> <a
-                        class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-4 rounded-lg hover:bg-orange-600 m-1">Register</a>
-                    <a
-                        class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-2 rounded-lg hover:bg-orange-600 m-1">Rules</a>
-                </div> <!-- Colour The Character -->
-                <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
-                    <h3 class="text-white font-bold">Colour The Character</h3>
-                    <p class="text-gray-400">Total Prize: 4.5k</p>
-                    <p class="text-gray-400">Entry Fee: ₹50</p> <a
-                        class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-4 rounded-lg hover:bg-orange-600 m-1">Register</a>
-                    <a
-                        class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-2 rounded-lg hover:bg-orange-600 m-1">Rules</a>
+                    <a data-modal="rulesModalBattleOfBands"
+                        class="rules-button cursor-pointer bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-2 rounded-lg hover:bg-orange-600 m-1">Rules</a>
+            </div>
+
+
+            <div id="rulesModalBattleOfBands"
+                class="rules-modal fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden">
+                <div class="bg-white p-6 rounded-lg shadow-lg w-3/4 lg:w-1/2">
+                    <h3 class="text-xl font-bold mb-4">BATTLE OF BANDS: Rules</h3>
+                    <ul class="list-disc list-inside text-sm text-gray-700">
+                        <li><strong>Entry Fee:</strong> Rs 300/- per band</li>
+                        <li><strong>Maximum Band Members:</strong> 10 participants</li>
+                        <li>All vocals and instrument solos must be performed live. No background music or tracks
+                            allowed, or disqualification will follow</li>
+                        <li><strong>Time Limit:</strong> Maximum 20-25 minutes (including setup time on stage)</li>
+                        <li>Negative marking will be applied if the time limit is exceeded</li>
+                    </ul>
+                    <button
+                        class="close-modal mt-6 bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600">Close</button>
                 </div>
             </div>
+
+
+            <div class="bg-gray-800 p-4 rounded-lg shadow-lg mb-4">
+                <h3 class="text-white font-bold">Instrumental Mastery</h3>
+                <p class="text-gray-400">Total Prize: 5k</p>
+                <a
+                    class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-4 rounded-lg hover:bg-orange-600 m-1">Register</a>
+                <a data-modal="rulesModalInstrumentalMastery"
+                    class="rules-button cursor-pointer bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-2 rounded-lg hover:bg-orange-600 m-1">Rules</a>
+            </div>
+
+
+            <div id="rulesModalInstrumentalMastery"
+                class="rules-modal fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden">
+                <div class="bg-white p-6 rounded-lg shadow-lg w-3/4 lg:w-1/2">
+                    <h3 class="text-xl font-bold mb-4">INSTRUMENTAL MASTERY: Rules</h3>
+                    <ul class="list-disc list-inside text-sm text-gray-700">
+                        <li><strong>Free Entry:</strong> No entry fee for participants</li>
+                        <li>Performance can be either solo or duo</li>
+                        <li>Participants must bring their own instruments</li>
+                        <li>Auditions will be held, and the best performers will participate in the main event</li>
+                        <li><strong>Time Limit:</strong> Minimum 3 minutes, Maximum 10 minutes</li>
+                    </ul>
+                    <button
+                        class="close-modal mt-6 bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600">Close</button>
+                </div>
+            </div>
+
+            <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                <h3 class="text-white font-bold">Talent Hunt</h3>
+                <p class="text-gray-400">Total Prize: 5k</p>
+                <p class="text-gray-400">Entry Fee: ₹100</p> <a
+                    class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-4 rounded-lg hover:bg-orange-600 m-1">Register</a>
+                <a
+                    class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-2 rounded-lg hover:bg-orange-600 m-1">Rules</a>
+            </div>
+            <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                <h3 class="text-white font-bold">Script It Out</h3>
+                <p class="text-gray-400">Total Prize: 2.5k</p>
+                <p class="text-gray-400">Entry Fee: ₹50</p> <a
+                    class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-4 rounded-lg hover:bg-orange-600 m-1">Register</a>
+                <a
+                    class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-2 rounded-lg hover:bg-orange-600 m-1">Rules</a>
+            </div>
+            <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                <h3 class="text-white font-bold">Stand Up Comedy</h3>
+                <p class="text-gray-400">Total Prize: 4k</p> <a
+                    class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-4 rounded-lg hover:bg-orange-600 m-1">Register</a>
+                <a
+                    class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-2 rounded-lg hover:bg-orange-600 m-1">Rules</a>
+            </div>
+            <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                <h3 class="text-white font-bold">Creative Photography</h3>
+                <p class="text-gray-400">Total Prize: 2.5k</p>
+                <p class="text-gray-400">Entry Fee: ₹50</p> <a
+                    class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-4 rounded-lg hover:bg-orange-600 m-1">Register</a>
+                <a
+                    class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-2 rounded-lg hover:bg-orange-600 m-1">Rules</a>
+            </div>
+<!-- Event: Open Highlight / Racaf Montage -->
+<div class="bg-gray-800 p-4 rounded-lg shadow-lg mb-4">
+    <h3 class="text-white font-bold">Open Highlight / Racaf Montage</h3>
+    <p class="text-gray-400">Total Prize: 3k</p>
+    <a class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-4 rounded-lg hover:bg-orange-600 m-1">Register</a>
+    <a data-modal="rulesModalOpenHighlight" 
+        class="rules-button cursor-pointer bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-2 rounded-lg hover:bg-orange-600 m-1">Rules</a>
+</div>
+
+<!-- Modal for Open Highlight / Racaf Montage -->
+<div id="rulesModalOpenHighlight" class="rules-modal fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden">
+    <div class="bg-white p-6 rounded-lg shadow-lg w-3/4 lg:w-1/2">
+        <h3 class="text-xl font-bold mb-4">OPEN HIGHLIGHT / RACAF MONTAGE: Rules</h3>
+        <ul class="list-disc list-inside text-sm text-gray-700">
+            <li><strong>Event Description:</strong></li>
+            <ul class="ml-5 list-disc">
+                <li>Create a video documenting RACAF from preparation to its conclusion in one of the following styles:</li>
+                <ul class="ml-5 list-disc">
+                    <li>POV</li>
+                    <li>Vlogging</li>
+                    <li>Retro</li>
+                    <li>Trailer</li>
+                </ul>
+                <li>The video should highlight key moments and showcase the overall event experience.</li>
+            </ul>
+            <li><strong>Content Requirements:</strong></li>
+            <ul class="ml-5 list-disc">
+                <li>Theme: Showcase the RACAF journey from start to finish.</li>
+                <li>Duration: 5 to 10 minutes.</li>
+                <li>Format: MP4 or MOV, minimum 720p resolution.</li>
+            </ul>
+            <li><strong>Submission:</strong></li>
+            <ul class="ml-5 list-disc">
+                <li>Upload the video to your Google Drive and share the link with the incharges by 23:59 on the last day of RACAF (i.e. 9th Nov, 2024).</li>
+            </ul>
+            <li><strong>Judging Criteria:</strong></li>
+            <ul class="ml-5 list-disc">
+                <li>Creativity & Originality (40%): How well does the video showcase the chosen style and unique moments of RACAF?</li>
+                <li>Storytelling (30%): How effectively does the video convey the journey of RACAF from preparation to the final moments?</li>
+                <li>Production Quality (20%): Video clarity, audio quality, and editing skills.</li>
+                <li>Emotional Impact (10%): The emotional or inspirational impact the video has on the audience.</li>
+            </ul>
+            <li><strong>Results & Prize:</strong></li>
+            <ul class="ml-5 list-disc">
+                <li>Results will be declared after RACAF.</li>
+                <li>Cash prizes will be given to the winners.</li>
+                <li>The winner’s video will be used in the RACAF 2K25 promo.</li>
+            </ul>
+            <li><strong>Disqualification:</strong></li>
+            <ul class="ml-5 list-disc">
+                <li>Plagiarism or inappropriate content will lead to disqualification.</li>
+            </ul>
+        </ul>
+        <button class="close-modal mt-6 bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600">Close</button>
+    </div>
+</div>
+
+            <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                <h3 class="text-white font-bold">Extempore</h3>
+                <p class="text-gray-400">Total Prize: 5k</p>
+                <p class="text-gray-400">Entry Fee: ₹50</p> <a
+                    class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-4 rounded-lg hover:bg-orange-600 m-1">Register</a>
+                <a
+                    class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-2 rounded-lg hover:bg-orange-600 m-1">Rules</a>
+            </div>
+            <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                <h3 class="text-white font-bold">Themed Speech</h3>
+                <p class="text-gray-400">Total Prize: 5k</p>
+                <p class="text-gray-400">Entry Fee: ₹50</p> <a
+                    class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-4 rounded-lg hover:bg-orange-600 m-1">Register</a>
+                <a
+                    class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-2 rounded-lg hover:bg-orange-600 m-1">Rules</a>
+            </div>
+            <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                <h3 class="text-white font-bold">Open Mic</h3>
+                <p class="text-gray-400">Total Prize: 6k</p>
+                <p class="text-gray-400">Entry Fee: ₹50</p> <a
+                    class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-4 rounded-lg hover:bg-orange-600 m-1">Register</a>
+                <a
+                    class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-2 rounded-lg hover:bg-orange-600 m-1">Rules</a>
+            </div>
+            <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                <h3 class="text-white font-bold">Sasta Critic</h3>
+                <p class="text-gray-400">Total Prize: 3.5k</p>
+                <p class="text-gray-400">Entry Fee: ₹50</p> <a
+                    class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-4 rounded-lg hover:bg-orange-600 m-1">Register</a>
+                <a
+                    class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-2 rounded-lg hover:bg-orange-600 m-1">Rules</a>
+            </div>
+            <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                <h3 class="text-white font-bold">Glass Painting</h3>
+                <p class="text-gray-400">Total Prize: 4.5k</p>
+                <p class="text-gray-400">Entry Fee: ₹100</p> <a
+                    class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-4 rounded-lg hover:bg-orange-600 m-1">Register</a>
+                <a
+                    class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-2 rounded-lg hover:bg-orange-600 m-1">Rules</a>
+            </div>
+            <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                <h3 class="text-white font-bold">T-shirt Painting</h3>
+                <p class="text-gray-400">Total Prize: 4.5k</p>
+                <p class="text-gray-400">Entry Fee: ₹100</p> <a
+                    class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-4 rounded-lg hover:bg-orange-600 m-1">Register</a>
+                <a
+                    class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-2 rounded-lg hover:bg-orange-600 m-1">Rules</a>
+            </div>
+            <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                <h3 class="text-white font-bold">Mehendi Art</h3>
+                <p class="text-gray-400">Total Prize: 2k</p>
+                <p class="text-gray-400">Entry Fee: ₹50</p> <a
+                    class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-4 rounded-lg hover:bg-orange-600 m-1">Register</a>
+                <a
+                    class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-2 rounded-lg hover:bg-orange-600 m-1">Rules</a>
+            </div>
+            <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                <h3 class="text-white font-bold">Wealth From Waste</h3>
+                <p class="text-gray-400">Total Prize: 2k</p> <a
+                    class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-4 rounded-lg hover:bg-orange-600 m-1">Register</a>
+                <a
+                    class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-2 rounded-lg hover:bg-orange-600 m-1">Rules</a>
+            </div>
+            <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                <h3 class="text-white font-bold">Face Painting</h3>
+                <p class="text-gray-400">Total Prize: 3k</p>
+                <p class="text-gray-400">Entry Fee: ₹100</p> <a
+                    class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-4 rounded-lg hover:bg-orange-600 m-1">Register</a>
+                <a
+                    class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-2 rounded-lg hover:bg-orange-600 m-1">Rules</a>
+            </div>
+            <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                <h3 class="text-white font-bold">Magazine Craft</h3>
+                <p class="text-gray-400">Total Prize: 2.5k</p>
+                <p class="text-gray-400">Entry Fee: ₹50</p> <a
+                    class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-4 rounded-lg hover:bg-orange-600 m-1">Register</a>
+                <a
+                    class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-2 rounded-lg hover:bg-orange-600 m-1">Rules</a>
+            </div>
+            <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                <h3 class="text-white font-bold">Eye Makeup</h3>
+                <p class="text-gray-400">Total Prize: 1.5k</p> <a
+                    class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-4 rounded-lg hover:bg-orange-600 m-1">Register</a>
+                <a
+                    class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-2 rounded-lg hover:bg-orange-600 m-1">Rules</a>
+            </div>
+            <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+                <h3 class="text-white font-bold">Colour The Character</h3>
+                <p class="text-gray-400">Total Prize: 4.5k</p>
+                <p class="text-gray-400">Entry Fee: ₹50</p> <a
+                    class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-4 rounded-lg hover:bg-orange-600 m-1">Register</a>
+                <a
+                    class="bg-[#FFD700] m-1 text-black font-normal text-sm px-4 py-2 mt-2 rounded-lg hover:bg-orange-600 m-1">Rules</a>
+            </div>
         </div>
+    </div>
     </div>
 
     <footer>
