@@ -891,7 +891,7 @@ h6 {
 .main-nav .navbar-brand {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #FFD700;
+  color: #d3a625;
   text-decoration: none;
 }
 
@@ -919,12 +919,13 @@ h6 {
 .main-nav .nav-links li {
   margin: 1rem;
   text-align: center;
-  color: #FFD700;
+  color: #d3a625;
   font-weight: 800;
+  font-size: large;
+
 }
 
 .main-nav .nav-links li a {
-  color: #FFD700;
   display: block;
   text-decoration: none;
 }
@@ -1070,33 +1071,48 @@ footer .social-links ul li a {
 }
 
 
+@font-face {
+  font-family: 'Harryp'; /* Name to use in your CSS */
+  src: url('HARRYP__.TTF') format('truetype'); /* Path to your font file */
+  font-weight: normal;
+  font-style: normal;
+}
+
 .header-content {
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 60%;
   transform: translate(-50%, -50%);
-  text-align: center;
-  color: #FFD700;
+  text-align: left;
+  color: #000000;
   z-index: 1;
-  font-family: LegendaryRunes;
+  font-family: 'Harryp'; /* Use the font */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 
 .header-content h1 {
-  font-size: 60px;
-  margin: 0;
+  font-size: 4vw;
+  margin-bottom: 0;
+  transition: letter-spacing 0.3s ease;
 }
-
+.header-content h1:hover {
+  letter-spacing: 0.2em;
+}
 .header-content h4 {
-  font-size: 30px;
-  margin: 0;
+  font-size: 2vw;
+  margin-top: 0.5em;
+  color: #000000;
+  margin-top: -10px;
 }
-
-
-
-
-
+@media (max-width: 768px) {
+  .header-content h1 {
+      font-size: 12vw;
+  }
+  .header-content h4 {
+      font-size: 6vw;
+  }
+}
 
 
 
@@ -1119,7 +1135,7 @@ footer .social-links ul li a {
 }
 
 .rules-section h3 {
-  color: #FFD700;
+  color: #d3a625;
   font-weight: bold;
   font-size: larger;
   margin: 15px 0;
