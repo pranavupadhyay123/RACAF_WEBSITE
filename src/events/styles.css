@@ -55,7 +55,7 @@
 }
 
 
-is not supported in the browser. */ .grid {
+.grid {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -371,7 +371,7 @@ is not supported in the browser. */ .grid {
 }
 
 
-the display flex can serve as a backup. */ @supports (display: grid) {
+@supports (display: grid) {
   .grid {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
