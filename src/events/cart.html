@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="cart-container">
+        <h1>Your Registered Events</h1>
+        <div id="cart-items">
+            <!-- Cart items will be dynamically loaded here -->
+        </div>
+        <h3>Total: $<span id="total-amount">0</span></h3>
+        <button id="checkout-btn" class="checkout-btn">Proceed to Payment</button>
+    </div>
+
+    <script>
+        // Load the cart from localStorage
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Display cart items and total amount
+        function displayCart() {
+            const cartItemsContainer = document.getElementById('cart-items');
+            const totalAmountContainer = document.getElementById('total-amount');
+            let totalAmount = 0;
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = "<p>Your cart is empty.</p>";
+            } else {
+                cartItemsContainer.innerHTML = ''; // Clear previous items
+                cart.forEach(item => {
+                    const itemElement = document.createElement('div');
+                    itemElement.classList.add('cart-item');
+                    itemElement.innerHTML = `<p>${item.name} - $${item.price}</p>`;
+                    cartItemsContainer.appendChild(itemElement);
+                    totalAmount += item.price; // Add the item price to total amount
+                });
+                totalAmountContainer.innerText = totalAmount; // Display the total amount
+            }
+        }
+
+        // Display cart when the page loads
+        displayCart();
+
+        // Checkout button (future logic for payment)
+        document.getElementById('checkout-btn').addEventListener('click', () => {
+            alert("Proceeding to Payment Gateway...");
+            // Logic to handle payment will be added here
+        });
+    </script>
+</body>
+</html>

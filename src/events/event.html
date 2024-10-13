@@ -15,7 +15,8 @@
 
 <body class="bg-black/95">
     <nav class="main-nav bg-black/70" id="main-nav">
-        <div class="content-wrapper-sm"> <a class="navbar-brand" href="#">RACAF 2K24</a>
+        <div class="content-wrapper-sm"> 
+            <a class="navbar-brand" href="#">RACAF 2K24</a>
             <div id="menu-button">
                 <div class="bar1"></div>
                 <div class="bar2"></div>
@@ -25,9 +26,12 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="../../sonabyss.html">Sonabyss</a></li>
+                <!-- Cart Icon -->
+                <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart (<span id="cart-count">0</span>)</a></li>
             </ul>
         </div>
     </nav>
+    
     </head>
     <div class="parallax"> <video autoplay muted loop id="bg-video">
             <source src="./bg.mp4" type="video/mp4"> Your browser does not support the video tag.
@@ -143,7 +147,28 @@
                 </div> <!-- Event: Duet Dhamaka -->
                 <div class="bg-gray-900 p-4 rounded-lg shadow-lg mb-4">
                     <h3 class="text-white font-bold">Duet Dhamaka</h3>
-                    <p class="text-gray-400">Club: DANCE CLUB</p> <a class="bg-[#d3a625] m-1 text-black font-normal text-sm px-4 py-2 mt-4 rounded-lg hover:bg-orange-600 m-1">Register</a> <a data-modal="rulesModalDuetDhamaka" class="rules-button cursor-pointer bg-[#d3a625] m-1 text-black font-normal text-sm px-4 py-2 mt-2 rounded-lg hover:bg-orange-600 m-1">Rules</a>
+                    <p class="text-gray-400">Club: DANCE CLUB</p> 
+                    <!-- Register Button in Event Modal -->
+<!-- Register Button in Event Modal -->
+<button class="register-btn mt-6 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600" onclick="addToCart('Duet Dhamaka', 500)">Register</button>
+
+<script>
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+function addToCart(eventName, eventPrice) {
+    // Add event to the cart
+    cart.push({ name: eventName, price: eventPrice });
+
+    // Update cart count in the navbar
+    document.getElementById('cart-count').innerText = cart.length;
+
+    // Store cart in localStorage
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    alert(eventName + " has been added to your cart!");
+}
+</script>
+                    <a data-modal="rulesModalDuetDhamaka" class="rules-button cursor-pointer bg-[#d3a625] m-1 text-black font-normal text-sm px-4 py-2 mt-2 rounded-lg hover:bg-orange-600 m-1">Rules</a>
                 </div> <!-- Modal for Duet Dhamaka -->
                 <div id="rulesModalDuetDhamaka" class="rules-modal fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden">
                     <div class="bg-white p-6 rounded-lg shadow-lg w-3/4 lg:w-1/2">
@@ -655,6 +680,93 @@
             </div>
         </div>
     </footer>
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+        const stripe = Stripe('your-publishable-key');
+    
+        document.getElementById('checkout-btn').addEventListener('click', async () => {
+            const response = await fetch('/create-checkout-session', {
+                method: 'POST',
+            });
+            const session = await response.json();
+            stripe.redirectToCheckout({ sessionId: session.id });
+        });
+    </script>
+    
+
+
+
+<script>
+    // Example for front-end AJAX call (register button)
+function registerForEvent(eventId) {
+    fetch('/register-event', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            event_id: eventId
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert('Event successfully registered!');
+        } else {
+            alert('Error registering event');
+        }
+    });
+}
+
+
+
+
+// On load of the cart page
+window.onload = function() {
+    fetch('/get-registered-events')
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            // Render the registered events in the DOM
+            const cartContainer = document.getElementById('cart-items');
+            data.events.forEach(event => {
+                const eventItem = document.createElement('div');
+                eventItem.innerHTML = `${event.name} - $${event.price}`;
+                cartContainer.appendChild(eventItem);
+            });
+
+            document.getElementById('total-amount').innerText = data.totalAmount;
+        } else {
+            document.getElementById('cart-items').innerHTML = "<p>Your cart is empty.</p>";
+        }
+    });
+}
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script charset="utf-8" src="../../js/menu.js"></script>
     <script charset="utf-8" src="../../js/astonish.js"></script>

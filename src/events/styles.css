@@ -1084,7 +1084,7 @@ footer .social-links ul li a {
   left: 60%;
   transform: translate(-50%, -50%);
   text-align: left;
-  color: #000000;
+  color: #d3a625;
   z-index: 1;
   font-family: 'Harryp'; /* Use the font */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -1102,7 +1102,6 @@ footer .social-links ul li a {
 .header-content h4 {
   font-size: 2vw;
   margin-top: 0.5em;
-  color: #000000;
   margin-top: -10px;
 }
 @media (max-width: 768px) {
