@@ -1,24 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Cart</title>
-    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <div class="cart-container">
-        <h1>Your Registered Events</h1>
-        <div id="cart-items">
+
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+    <div class="container mx-auto my-10 p-6 bg-white shadow-lg rounded-lg">
+        <h1 class="text-3xl font-bold mb-6 text-gray-900">Your Registered Events</h1>
+
+        <div id="cart-items" class="space-y-4">
             <!-- Cart items will be dynamically loaded here -->
         </div>
-        <h3>Total: $<span id="total-amount">0</span></h3>
-        <button id="checkout-btn" class="checkout-btn">Proceed to Payment</button>
+
+        <div class="mt-6 flex justify-between items-center border-t pt-6">
+            <h3 class="text-xl font-semibold">Total: ₹<span id="total-amount">0</span></h3>
+            <button id="checkout-btn" class="bg-green-600 text-white font-semibold py-2 px-6 rounded-lg shadow hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-opacity-50 transition">
+                Proceed to Payment
+            </button>
+        </div>
     </div>
 
     <script>
         // Load the cart from localStorage
-        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Function to remove an item from the cart
+        function removeFromCart(index) {
+            cart.splice(index, 1); // Remove the item from the cart array
+            localStorage.setItem('cart', JSON.stringify(cart)); // Update localStorage
+            displayCart(); // Refresh the cart display
+        }
 
         // Display cart items and total amount
         function displayCart() {
@@ -27,13 +42,16 @@
             let totalAmount = 0;
 
             if (cart.length === 0) {
-                cartItemsContainer.innerHTML = "<p>Your cart is empty.</p>";
+                cartItemsContainer.innerHTML = "<p class='text-gray-500'>Your cart is empty.</p>";
             } else {
                 cartItemsContainer.innerHTML = ''; // Clear previous items
-                cart.forEach(item => {
+                cart.forEach((item, index) => {
                     const itemElement = document.createElement('div');
-                    itemElement.classList.add('cart-item');
-                    itemElement.innerHTML = `<p>${item.name} - $${item.price}</p>`;
+                    itemElement.classList.add('cart-item', 'flex', 'justify-between', 'items-center', 'bg-gray-100', 'p-4', 'rounded-lg', 'shadow-md');
+                    itemElement.innerHTML = `
+                        <p class="text-gray-700 font-medium">${item.name} - ₹${item.price}</p>
+                        <button class="text-red-500 hover:text-red-700 font-semibold" onclick="removeFromCart(${index})">Remove</button>
+                    `;
                     cartItemsContainer.appendChild(itemElement);
                     totalAmount += item.price; // Add the item price to total amount
                 });
@@ -51,4 +69,5 @@
         });
     </script>
 </body>
+
 </html>

@@ -6,29 +6,29 @@ const session = require('express-session');
 const mysql = require('mysql2');
 
 const app = express();
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+// app.use(express.json());
+// app.use(express.urlencoded({ extended: true }));
 
-// Setting up session middleware
-app.use(session({
-    secret: 'ParryHotter',
-    resave: false,
-    saveUninitialized: false,
-    cookie: { secure: true } // Set to true if using HTTPS
-}));
+// // Setting up session middleware
+// app.use(session({
+//     secret: 'ParryHotter',
+//     resave: false,
+//     saveUninitialized: false,
+//     cookie: { secure: true } // Set to true if using HTTPS
+// }));
 
-// MySQL Connection
-const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '12345', // Your MySQL password
-    database: 'Racaf' // Your MySQL database
-});
+// // MySQL Connection
+// const connection = mysql.createConnection({
+//     host: 'localhost',
+//     user: 'root',
+//     password: '12345', // Your MySQL password
+//     database: 'Racaf' // Your MySQL database
+// });
 
-connection.connect(err => {
-    if (err) throw err;
-    console.log('Connected to the database!');
-});
+// connection.connect(err => {
+//     if (err) throw err;
+//     console.log('Connected to the database!');
+// });
 
 app.use(bodyParser.json());
 app.use(cors());
