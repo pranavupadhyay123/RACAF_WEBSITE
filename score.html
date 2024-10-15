@@ -3,137 +3,214 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scores</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
-            background-image: url('https://images.unsplash.com/photo-1605792657660-596af900c104?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
-            /* Background image */
+            background-image: url('https://wallpapercave.com/wp/wp1850875.png');
             background-size: cover;
             background-position: center;
             filter: brightness(0.8);
-            /* Darken the background a bit */
+        }
+
+        .hidden {
+            display: none;
         }
     </style>
 </head>
 
-<body class="bg-cover bg-no-repeat font-sans">
+<body class="bg-cover bg-no-repeat font-sans h-screen flex flex-col items-center justify-center">
 
-<div class="container mx-auto mt-10 p-4">
-    <h2 class="text-center text-3xl font-bold text-white mb-10">Scores</h2>
+    <!-- Main Menu -->
+    <div id="menu" class="text-center">
+        <h2 class="text-6xl font-italic text-white mb-10">EVENT</h2>
 
-    <div class="overflow-x-auto bg-opacity-50 rounded-lg p-6">
-        <table class="table-auto w-full text-center bg-gray-800 text-white rounded-lg">
-            <thead class="bg-gray-700">
-            <tr>
-                <th class="px-4 py-2">Block</th>
-                <th class="px-4 py-2">Score</th>
-            </tr>
-            </thead>
-            <tbody id="table-body">
-            <tr id="blockA">
-                <td class="border px-4 py-2">Block A</td>
-                <td class="border px-4 py-2" id="scoreA">0</td>
-            </tr>
-            <tr id="blockB">
-                <td class="border px-4 py-2">Block B</td>
-                <td class="border px-4 py-2" id="scoreB">0</td>
-            </tr>
-            <tr id="blockC">
-                <td class="border px-4 py-2">Block C</td>
-                <td class="border px-4 py-2" id="scoreC">0</td>
-            </tr>
-            <tr id="blockD">
-                <td class="border px-4 py-2">Block D</td>
-                <td class="border px-4 py-2" id="scoreD">0</td>
-            </tr>
-            <tr id="blockE1">
-                <td class="border px-4 py-2">Block E1</td>
-                <td class="border px-4 py-2" id="scoreE1">0</td>
-            </tr>
-            <tr id="blockE2">
-                <td class="border px-4 py-2">Block E2</td>
-                <td class="border px-4 py-2" id="scoreE2">0</td>
-            </tr>
-            <tr id="blockF1">
-                <td class="border px-4 py-2">Block F1</td>
-                <td class="border px-4 py-2" id="scoreF1">0</td>
-            </tr>
-            <tr id="blockF2">
-                <td class="border px-4 py-2">Block F2</td>
-                <td class="border px-4 py-2" id="scoreF2">0</td>
-            </tr>
-            <tr id="blockH1">
-                <td class="border px-4 py-2">Block H1</td>
-                <td class="border px-4 py-2" id="scoreH1">0</td>
-            </tr>
-            <tr id="blockH2">
-                <td class="border px-4 py-2">Block H2</td>
-                <td class="border px-4 py-2" id="scoreH2">0</td>
-            </tr>
-            </tbody>
-        </table>
+        <div class="flex justify-center space-x-4">
+
+            <!-- Block Event Button -->
+            <button class="bg-purple-500 text-white px-1 py-1 rounded hover:bg-purple-400 text-2xl"
+                onclick="showTable('block')">Block Event</button>
+
+            <!-- Individual Event Button -->
+            <button class="bg-purple-500 text-white px-1 py-1 rounded hover:bg-purple-400 text-2xl"
+                onclick="showTable('individual')">Individual Event</button>
+
+            <!-- Block Score Button -->
+            <button class="bg-purple-500 text-white px-1 py-1 rounded hover:bg-purple-400 text-2xl"
+                onclick="showTable('blockScore')">Block Score</button>
+        </div>
     </div>
 
-    <!-- Input field and button to add daily scores -->
-    <div class="mt-8 text-center">
-        <input class="px-4 py-2 border rounded" id="blockName" placeholder="Block Name" type="text">
-        <input class="px-4 py-2 border rounded" id="dailyScore" min="0" placeholder="Score" type="number">
-        <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
-                onclick="authenticateAndAddScore()">Add Score
-        </button>
+    <!-- Block Events Table -->
+    <div id="block-events" class="container mx-auto mt-10 p-4 hidden">
+        <h2 class="text-center text-3xl font-bold text-white mb-10"></h2>
+
+        <div class="overflow-x-auto bg-opacity-50 rounded-lg p-6">
+            <table class="table-auto w-full text-center bg-gray-800 text-white rounded-lg">
+                <thead class="bg-gray-700">
+                    <tr>
+                        <th class="px-4 py-2">Event</th>
+                        <th class="px-4 py-2">Winner</th>
+                    </tr>
+                </thead>
+                <tbody id="block-table-body">
+                    <tr>
+                        <td class="border px-4 py-2">Street Play</td>
+                        <td class="border px-4 py-2"></td>
+                    </tr>
+                    <tr>
+                        <td class="border px-4 py-2">Theatrics</td>
+                        <td class="border px-4 py-2"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="mt-8 text-center">
+            <input type="text" id="blockName" class="px-4 py-2 border rounded" placeholder="Event Name">
+            <input type="text" id="blockWinner" class="px-4 py-2 border rounded" placeholder="Block Name">
+            <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+                onclick="authenticateAndAddScore('block')">Add Winner</button>
+        </div>
     </div>
-</div>
 
-<!-- JavaScript to handle score update with password authentication -->
-<script>
-    const correctPassword = 'admin123'; // Use environment variables or server-side storage in real applications
+    <!-- Individual Events Table -->
+    <div id="individual-events" class="container mx-auto mt-10 p-4 hidden">
+        <h2 class="text-center text-3xl font-bold text-white mb-10"></h2>
 
-    function authenticateAndAddScore() {
-        const password = prompt('Enter password to update the score:');
-        if (password === correctPassword) {
-            addDailyScore();
-        } else {
-            alert('Incorrect password!');
-        }
-    }
+        <div class="overflow-x-auto bg-opacity-50 rounded-lg p-6">
+            <table class="table-auto w-full text-center bg-gray-800 text-white rounded-lg">
+                <thead class="bg-gray-700">
+                    <tr>
+                        <th class="px-4 py-2">Event</th>
+                        <th class="px-4 py-2">Winner</th>
+                    </tr>
+                </thead>
+                <tbody id="individual-table-body">
+                    <tr>
+                        <td class="border px-4 py-2">Glass Painting</td>
+                        <td class="border px-4 py-2"></td>
+                    </tr>
+                    <tr>
+                        <td class="border px-4 py-2">T-Shirt Painting</td>
+                        <td class="border px-4 py-2"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-    function addDailyScore() {
-        const blockName = document.getElementById('blockName').value.trim().toLowerCase(); // Convert input to lowercase
-        const dailyScore = parseInt(document.getElementById('dailyScore').value);
+        <div class="mt-8 text-center">
+            <input type="text" id="individualName" class="px-4 py-2 border rounded" placeholder="Event Name">
+            <input type="text" id="individualWinner" class="px-4 py-2 border rounded" placeholder="Winner">
+            <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+                onclick="authenticateAndAddScore('individual')">Add Winner</button>
+        </div>
+    </div>
 
-        if (!blockName || isNaN(dailyScore)) {
-            alert('Please provide a valid block name and score.');
-            return;
-        }
+    <!-- Block Score Table -->
+    <div id="block-score" class="container mx-auto mt-10 p-4 hidden">
+        <h2 class="text-center text-3xl font-bold text-white mb-10"></h2>
 
-        // Find the row based on the block name
-        const rows = document.querySelectorAll('#table-body tr');
-        let found = false;
+        <div class="overflow-x-auto bg-opacity-50 rounded-lg p-6">
+            <table class="table-auto w-full text-center bg-gray-800 text-white rounded-lg">
+                <thead class="bg-gray-700">
+                    <tr>
+                        <th class="px-4 py-2">Block</th>
+                        <th class="px-4 py-2">Score</th>
+                    </tr>
+                </thead>
+                <tbody id="block-score-body">
+                    <tr>
+                        <td class="border px-4 py-2">Block A</td>
+                        <td class="border px-4 py-2"></td>
+                    </tr>
+                    <tr>
+                        <td class="border px-4 py-2">Block B</td>
+                        <td class="border px-4 py-2"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-        rows.forEach(row => {
-            const rowBlockName = row.querySelector('td:first-child').textContent.trim().toLowerCase();
+        <div class="mt-8 text-center">
+            <input type="text" id="blockNameScore" class="px-4 py-2 border rounded" placeholder="Block Name">
+            <input type="text" id="blockScore" class="px-4 py-2 border rounded" placeholder="Score">
+            <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+                onclick="authenticateAndAddScore('blockScore')">Update Score</button>
+        </div>
+    </div>
 
-            if (rowBlockName === blockName) {
-                const scoreCell = row.querySelector('td:last-child');
-                let currentScore = parseInt(scoreCell.textContent);
-                currentScore += dailyScore;
-                scoreCell.textContent = currentScore;
-                found = true;
+    <!-- JavaScript for handling event selection, background change, and score updates -->
+    <script>
+        const correctPassword = 'admin123'; // Ideally, this should be stored securely on the server.
+
+        function showTable(type) {
+            // Hide all tables first
+            document.getElementById('block-events').classList.add('hidden');
+            document.getElementById('individual-events').classList.add('hidden');
+            document.getElementById('block-score').classList.add('hidden');
+
+            // Show the relevant table
+            if (type === 'block') {
+                document.body.style.backgroundImage = "url('https://moewalls.com/wp-content/uploads/2023/02/hogwarts-legacy-dark-version-thumb.jpg')";
+                document.getElementById('block-events').classList.remove('hidden');
+            } else if (type === 'individual') {
+                document.body.style.backgroundImage = "url('https://www.wallpapertip.com/wmimgs/137-1370494_hogwarts-wallpapers-79-background-pictures-harry-potter-dementor.jpg')";
+                document.getElementById('individual-events').classList.remove('hidden');
+            } else if (type === 'blockScore') {
+                document.body.style.backgroundImage = "url('https://www.wallpapertip.com/wmimgs/5-58831_harry-potter-wallpaper-pc.jpg')";
+                document.getElementById('block-score').classList.remove('hidden');
             }
-        });
-
-        if (!found) {
-            alert('Block not found!');
         }
 
-        // Clear inputs
-        document.getElementById('blockName').value = '';
-        document.getElementById('dailyScore').value = '';
-    }
-</script>
+        function authenticateAndAddScore(type) {
+            const password = prompt('Enter password to update the score:');
+            if (password === correctPassword) {
+                if (type === 'block') {
+                    addWinner('block');
+                } else if (type === 'individual') {
+                    addWinner('individual');
+                } else if (type === 'blockScore') {
+                    addWinner('blockScore');
+                }
+            } else {
+                alert('Incorrect password!');
+            }
+        }
+
+        function addWinner(type) {
+            let eventName, winnerName, tableRows;
+
+            if (type === 'block') {
+                eventName = document.getElementById('blockName').value.trim().toLowerCase();
+                winnerName = document.getElementById('blockWinner').value.trim();
+                tableRows = document.querySelectorAll('#block-table-body tr');
+            } else if (type === 'individual') {
+                eventName = document.getElementById('individualName').value.trim().toLowerCase();
+                winnerName = document.getElementById('individualWinner').value.trim();
+                tableRows = document.querySelectorAll('#individual-table-body tr');
+            } else if (type === 'blockScore') {
+                const blockName = document.getElementById('blockNameScore').value.trim().toLowerCase();
+                const score = document.getElementById('blockScore').value.trim();
+                tableRows = document.querySelectorAll('#block-score-body tr');
+
+                tableRows.forEach(row => {
+                    const blockCell = row.querySelector('td:nth-child(1)').textContent.trim().toLowerCase();
+                    if (blockCell === blockName) {
+                        row.querySelector('td:nth-child(2)').textContent = score;
+                    }
+                });
+            }
+
+            // Reset input fields
+            document.getElementById('blockName').value = '';
+            document.getElementById('blockWinner').value = '';
+            document.getElementById('blockNameScore').value = '';
+            document.getElementById('blockScore').value = '';
+        }
+    </script>
 </body>
 
 </html>
