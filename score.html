@@ -30,22 +30,22 @@
         <div class="flex justify-center space-x-4">
 
             <!-- Block Event Button -->
-            <button class="bg-purple-500 text-white px-1 py-1 rounded hover:bg-purple-400 text-2xl"
+            <button class="bg-purple-500 text-white px-1 py-1 rounded hover:bg-purple-600 text-2xl"
                 onclick="showTable('block')">Block Event</button>
 
             <!-- Individual Event Button -->
-            <button class="bg-purple-500 text-white px-1 py-1 rounded hover:bg-purple-400 text-2xl"
+            <button class="bg-purple-500 text-white px-1 py-1 rounded hover:bg-purple-600 text-2xl"
                 onclick="showTable('individual')">Individual Event</button>
 
             <!-- Block Score Button -->
-            <button class="bg-purple-500 text-white px-1 py-1 rounded hover:bg-purple-400 text-2xl"
+            <button class="bg-purple-500 text-white px-1 py-1 rounded hover:bg-purple-600 text-2xl"
                 onclick="showTable('blockScore')">Block Score</button>
         </div>
     </div>
 
     <!-- Block Events Table -->
     <div id="block-events" class="container mx-auto mt-10 p-4 hidden">
-        <h2 class="text-center text-3xl font-bold text-white mb-10"></h2>
+        <h2 class="text-center text-3xl font-bold text-white mb-10">Block Event</h2>
 
         <div class="overflow-x-auto bg-opacity-50 rounded-lg p-6">
             <table class="table-auto w-full text-center bg-gray-800 text-white rounded-lg">
@@ -56,14 +56,7 @@
                     </tr>
                 </thead>
                 <tbody id="block-table-body">
-                    <tr>
-                        <td class="border px-4 py-2">Street Play</td>
-                        <td class="border px-4 py-2"></td>
-                    </tr>
-                    <tr>
-                        <td class="border px-4 py-2">Theatrics</td>
-                        <td class="border px-4 py-2"></td>
-                    </tr>
+                    <!-- Data will be inserted dynamically -->
                 </tbody>
             </table>
         </div>
@@ -78,7 +71,7 @@
 
     <!-- Individual Events Table -->
     <div id="individual-events" class="container mx-auto mt-10 p-4 hidden">
-        <h2 class="text-center text-3xl font-bold text-white mb-10"></h2>
+        <h2 class="text-center text-3xl font-bold text-white mb-10">Individual Event</h2>
 
         <div class="overflow-x-auto bg-opacity-50 rounded-lg p-6">
             <table class="table-auto w-full text-center bg-gray-800 text-white rounded-lg">
@@ -89,21 +82,14 @@
                     </tr>
                 </thead>
                 <tbody id="individual-table-body">
-                    <tr>
-                        <td class="border px-4 py-2">Glass Painting</td>
-                        <td class="border px-4 py-2"></td>
-                    </tr>
-                    <tr>
-                        <td class="border px-4 py-2">T-Shirt Painting</td>
-                        <td class="border px-4 py-2"></td>
-                    </tr>
+                    <!-- Data will be inserted dynamically -->
                 </tbody>
             </table>
         </div>
 
         <div class="mt-8 text-center">
             <input type="text" id="individualName" class="px-4 py-2 border rounded" placeholder="Event Name">
-            <input type="text" id="individualWinner" class="px-4 py-2 border rounded" placeholder="Winner">
+            <input type="text" id="individualWinner" class="px-4 py-2 border rounded" placeholder="Winner Name">
             <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
                 onclick="authenticateAndAddScore('individual')">Add Winner</button>
         </div>
@@ -111,7 +97,7 @@
 
     <!-- Block Score Table -->
     <div id="block-score" class="container mx-auto mt-10 p-4 hidden">
-        <h2 class="text-center text-3xl font-bold text-white mb-10"></h2>
+        <h2 class="text-center text-3xl font-bold text-white mb-10">Block Score</h2>
 
         <div class="overflow-x-auto bg-opacity-50 rounded-lg p-6">
             <table class="table-auto w-full text-center bg-gray-800 text-white rounded-lg">
@@ -122,14 +108,7 @@
                     </tr>
                 </thead>
                 <tbody id="block-score-body">
-                    <tr>
-                        <td class="border px-4 py-2">Block A</td>
-                        <td class="border px-4 py-2"></td>
-                    </tr>
-                    <tr>
-                        <td class="border px-4 py-2">Block B</td>
-                        <td class="border px-4 py-2"></td>
-                    </tr>
+                    <!-- Data will be inserted dynamically -->
                 </tbody>
             </table>
         </div>
@@ -142,7 +121,7 @@
         </div>
     </div>
 
-    <!-- JavaScript for handling event selection, background change, and score updates -->
+    <!-- JavaScript for handling event selection, background change, and score updates with localStorage -->
     <script>
         const correctPassword = 'admin123'; // Ideally, this should be stored securely on the server.
 
@@ -152,16 +131,19 @@
             document.getElementById('individual-events').classList.add('hidden');
             document.getElementById('block-score').classList.add('hidden');
 
-            // Show the relevant table
+            // Show the relevant table and load data from localStorage
             if (type === 'block') {
                 document.body.style.backgroundImage = "url('https://moewalls.com/wp-content/uploads/2023/02/hogwarts-legacy-dark-version-thumb.jpg')";
                 document.getElementById('block-events').classList.remove('hidden');
+                loadTableData('block');
             } else if (type === 'individual') {
                 document.body.style.backgroundImage = "url('https://www.wallpapertip.com/wmimgs/137-1370494_hogwarts-wallpapers-79-background-pictures-harry-potter-dementor.jpg')";
                 document.getElementById('individual-events').classList.remove('hidden');
+                loadTableData('individual');
             } else if (type === 'blockScore') {
-                document.body.style.backgroundImage = "url('https://www.wallpapertip.com/wmimgs/5-58831_harry-potter-wallpaper-pc.jpg')";
+                document.body.style.backgroundImage = "url('https://images6.alphacoders.com/113/1130105.jpg')";
                 document.getElementById('block-score').classList.remove('hidden');
+                loadTableData('blockScore');
             }
         }
 
@@ -181,35 +163,66 @@
         }
 
         function addWinner(type) {
-            let eventName, winnerName, tableRows;
-
             if (type === 'block') {
-                eventName = document.getElementById('blockName').value.trim().toLowerCase();
-                winnerName = document.getElementById('blockWinner').value.trim();
-                tableRows = document.querySelectorAll('#block-table-body tr');
+                const event = document.getElementById('blockName').value;
+                const winner = document.getElementById('blockWinner').value;
+                if (event && winner) {
+                    updateTableAndLocalStorage(type, event, winner);
+                    document.getElementById('blockName').value = '';
+                    document.getElementById('blockWinner').value = '';
+                } else {
+                    alert('Please fill out both fields.');
+                }
             } else if (type === 'individual') {
-                eventName = document.getElementById('individualName').value.trim().toLowerCase();
-                winnerName = document.getElementById('individualWinner').value.trim();
-                tableRows = document.querySelectorAll('#individual-table-body tr');
+                const event = document.getElementById('individualName').value;
+                const winner = document.getElementById('individualWinner').value;
+                if (event && winner) {
+                    updateTableAndLocalStorage(type, event, winner);
+                    document.getElementById('individualName').value = '';
+                    document.getElementById('individualWinner').value = '';
+                } else {
+                    alert('Please fill out both fields.');
+                }
             } else if (type === 'blockScore') {
-                const blockName = document.getElementById('blockNameScore').value.trim().toLowerCase();
-                const score = document.getElementById('blockScore').value.trim();
-                tableRows = document.querySelectorAll('#block-score-body tr');
-
-                tableRows.forEach(row => {
-                    const blockCell = row.querySelector('td:nth-child(1)').textContent.trim().toLowerCase();
-                    if (blockCell === blockName) {
-                        row.querySelector('td:nth-child(2)').textContent = score;
-                    }
-                });
+                const block = document.getElementById('blockNameScore').value;
+                const score = document.getElementById('blockScore').value;
+                if (block && score) {
+                    updateTableAndLocalStorage(type, block, score);
+                    document.getElementById('blockNameScore').value = '';
+                    document.getElementById('blockScore').value = '';
+                } else {
+                    alert('Please fill out both fields.');
+                }
             }
-
-            // Reset input fields
-            document.getElementById('blockName').value = '';
-            document.getElementById('blockWinner').value = '';
-            document.getElementById('blockNameScore').value = '';
-            document.getElementById('blockScore').value = '';
         }
+
+        function updateTableAndLocalStorage(type, name, value) {
+            let data = JSON.parse(localStorage.getItem(type)) || [];
+            data.push({ name, value });
+            localStorage.setItem(type, JSON.stringify(data));
+            loadTableData(type);
+        }
+
+        function loadTableData(type) {
+            const tableBody = type === 'block' ? document.getElementById('block-table-body') :
+                type === 'individual' ? document.getElementById('individual-table-body') :
+                    document.getElementById('block-score-body');
+
+            tableBody.innerHTML = '';
+            const data = JSON.parse(localStorage.getItem(type)) || [];
+
+            data.forEach(item => {
+                const newRow = `<tr><td class="border px-4 py-2">${item.name}</td><td class="border px-4 py-2">${item.value}</td></tr>`;
+                tableBody.insertAdjacentHTML('beforeend', newRow);
+            });
+        }
+
+        // Load data when the page loads
+        window.onload = () => {
+            loadTableData('block');
+            loadTableData('individual');
+            loadTableData('blockScore');
+        };
     </script>
 </body>
 
